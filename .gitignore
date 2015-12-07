@@ -11,4 +11,3 @@ public/js/bundle.js
 doc
 Gemfile.lock
 apps/**/translations/en
-/node_modules
