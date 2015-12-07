@@ -84,7 +84,7 @@ app.use(secureCookies);
 app.use(initSession);
 
 // apps
-
+app.use(require('./apps/ecs/'));
 
 app.get('/cookies', function renderCookies(req, res) {
   res.render('cookies');

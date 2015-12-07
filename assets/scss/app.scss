@@ -38,6 +38,26 @@ h1 {
   @include bold-24;
 }
 
+summary {
+  cursor: pointer;
+  font-family: "nta",Arial,sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  color: #005ea5;
+  display: block;
+  text-decoration: underline;
+}
+
+summary:before {
+  float: left;
+  width: 15px;
+  content: '► ';
+  font-size: 60%;
+  margin-top: 4px;
+}
+
 .form-label-bold {
   @include core-19;
 }
