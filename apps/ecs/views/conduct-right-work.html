@@ -1,0 +1,57 @@
+{{<layout}}
+
+{{$journeyHeader}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/journeyHeader}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+<div>
+    <legend><h1><strong>{{#t}}pages.conduct-right-work.legend{{/t}} </strong></h1></legend>
+
+    <div>
+        <p>{{#t}}pages.conduct-right-work.text1{{/t}} </p>
+
+        <p>{{#t}}pages.conduct-right-work.text2{{/t}}</p>
+        <ul class="indent">
+            <li>{{#t}}pages.conduct-right-work.employeeDetails.fullName{{/t}}</li>
+            <li>{{#t}}pages.conduct-right-work.employeeDetails.dob{{/t}}</li>
+            <li>{{#t}}pages.conduct-right-work.employeeDetails.nationality{{/t}}</li>
+            <li>{{#t}}pages.conduct-right-work.employeeDetails.jobTitle{{/t}}</li>
+            <li>{{#t}}pages.conduct-right-work.employeeDetails.hoursWorkedPerWeek{{/t}}</li>
+            <li>{{#t}}pages.conduct-right-work.employeeDetails.homeAddress{{/t}}</li>
+        </ul>
+        <br>
+
+        <p>{{#t}}pages.conduct-right-work.text3{{/t}}</p>
+        <ul class="indent">
+            <li>{{#t}}pages.conduct-right-work.employerDetails.businessName{{/t}}</li>
+            <li>{{#t}}pages.conduct-right-work.employerDetails.businessType{{/t}}</li>
+            <li>{{#t}}pages.conduct-right-work.employerDetails.businessContact{{/t}} </li>
+        </ul>
+
+        <br>
+
+        <p>{{#t}}pages.conduct-right-work.text4{{/t}}.</p>
+
+    </div>
+
+
+</div>
+
+<br>
+
+{{<partials-form}}
+
+{{$form}}
+{{#input-submit}}next{{/input-submit}}
+{{/form}}
+
+{{/partials-form}}
+
+{{/content}}
+
+{{/layout}}

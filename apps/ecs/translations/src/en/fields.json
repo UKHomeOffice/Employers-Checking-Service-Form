@@ -9,5 +9,13 @@
     "no": {
       "label": "No"
     }
+  },
+    "ongoing-application-id-number":{
+      "labelText": "Please provide the reference number of an on-going application or its Case ID",
+      "label":" "
+    },
+  "employee-name-text":{
+    "label": "Full name, including middle names mandatory field"
   }
+
 }

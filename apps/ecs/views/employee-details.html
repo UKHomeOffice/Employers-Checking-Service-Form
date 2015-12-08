@@ -1,0 +1,34 @@
+{{<layout}}
+
+{{$journeyHeader}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/journeyHeader}}
+
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+{{<partials-form}}
+
+{{$form}}
+<div> </div>
+<h1>{{#t}}pages.employee-details.label{{/t}} </h1>
+
+<h3>{{#t}}pages.employee-details.legend{{/t}} </h3>
+
+{{#input-text}}employee-name-text{{/input-text}}
+
+{{#input-submit}}next{{/input-submit}}
+{{/form}}
+
+{{/partials-form}}
+
+{{/content}}
+
+{{/layout}}

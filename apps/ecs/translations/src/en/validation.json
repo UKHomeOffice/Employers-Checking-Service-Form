@@ -4,5 +4,11 @@
   },
   "anonymous": {
     "required": "Please let us know whether we can contact you for more information"
-  }
+  },
+  "ongoing-application-id-number": {
+    "required": " This is a required field and must be completed."
+  },
+  "ongoing-application-id-number": {
+  "required": " This is a required field and must be completed."
+}
 }

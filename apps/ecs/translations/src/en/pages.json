@@ -2,5 +2,30 @@
   "eea-passport": {
     "which-countries": "Which countries are in the EEA?",
     "eea-countries": "The EEA includes: Austria, Belgium, Bulgaria, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, United Kingdom."
+  },
+  "conduct-right-work": {
+    "legend": "You need to ask the Home Office to conduct a right to work check",
+    "text1": "The employee or prospective employee will need to agree to this check first. They can do this verbally or in writing.",
+    "text2": "To request a right to work check you will need their:",
+    "text3": "As well as the employer’s:",
+    "text4": "You will be asked to enter these details into a simple online form and will receive email confirmation of everything you've entered. We aim to respond by email within five working days.",
+    "employeeDetails": {
+      "fullName" : "full name",
+      "dob":"date of birth",
+      "nationality":"nationality",
+      "jobTitle":"job title",
+      "hoursWorkedPerWeek":"hours worked per week",
+      "homeAddress":"home address"
+    },
+    "employerDetails":{
+      "businessName": "business name",
+      "businessType": "business type",
+      "businessContact": "contact information (including a named employee, and their job title, business address, phone number and email address)"
+    }
+  },
+  "employee-details":{
+    "label": "Request a Home Office right to work check",
+    "legend": "Employee's or prospective employee's details"
+
   }
 }
