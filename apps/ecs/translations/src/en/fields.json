@@ -16,6 +16,27 @@
     },
   "employee-name-text":{
     "label": "Full name, including middle names mandatory field"
+  },
+  "date-of-birth": {
+    "legend": "Date of birth",
+    "hint": "For example, 31  3  1970"
+  },
+  "date-of-birth-day": {
+    "label": "Day"
+  },
+  "date-of-birth-month": {
+    "label": "Month"
+  },
+  "date-of-birth-year": {
+    "label": "Year"
+  },
+  "nationality": {
+    "label": "Country of nationality"
+  },
+  "job-title":{
+    "label": "Job title"
+  },
+  "hours-per-week":{
+    "label": "Hours per week"
   }
-
 }

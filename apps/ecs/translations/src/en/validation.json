@@ -9,6 +9,30 @@
     "required": " This is a required field and must be completed."
   },
   "ongoing-application-id-number": {
-  "required": " This is a required field and must be completed."
-}
+    "required": " This is a required field and must be completed."
+  },
+  "date-of-birth": {
+    "required": "Enter your date of birth",
+    "numeric": "Date must only contain numbers",
+    "future": "The date is in the future",
+    "format": "Enter your date of birth in the correct format"
+  },
+  "uk-address-house-number": {
+    "required": "Enter your house name or number"
+  },
+  "uk-address-street": {
+    "required": "Enter your street"
+  },
+  "uk-address-town": {
+    "required": "Enter the Town or City"
+  },
+  "uk-address-postcode": {
+    "required": "Enter the postcode"
+  },
+  "job-title": {
+    "required": "Enter the job title"
+  },
+  "hours-per-week": {
+    "required": "Enter the hours per week"
+  }
 }

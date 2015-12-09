@@ -19,8 +19,20 @@ module.exports = {
         next: '/employee-details'
     },
     '/employee-details': {
+        controller: require('../common/controllers/personal-details'),
         fields: [
-          'employee-name-text'
+            'employee-name-text',
+            'date-of-birth',
+            'date-of-birth-day',
+            'date-of-birth-month',
+            'date-of-birth-year',
+            'uk-address-house-number',
+            'uk-address-street',
+            'uk-address-town',
+            'uk-address-county',
+            'uk-address-postcode',
+            'job-title',
+            'hours-per-week'
         ],
         backLink: 'conduct-right-work',
         next: '/employer-details'
