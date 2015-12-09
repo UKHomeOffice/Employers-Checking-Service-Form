@@ -4,5 +4,11 @@
   },
   "anonymous": {
     "required": "Please let us know whether we can contact you for more information"
+  },
+  "eea-passport": {
+    "required": "Select an option."
+  },
+  "work-for-you": {
+    "required": "Select an option."
   }
 }

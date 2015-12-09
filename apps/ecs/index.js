@@ -17,7 +17,7 @@ router.use(mixins(fields, {
     translate: i18n.translate.bind(i18n)
 }));
 
-router.use('/ecs-application/', wizard(require('./steps'), fields, {
+router.use('/ecs-application', wizard(require('./steps'), fields, {
     controller: require('../../lib/base-controller'),
     templatePath: path.resolve(__dirname, 'views'),
     translate: i18n.translate.bind(i18n),

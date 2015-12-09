@@ -9,5 +9,50 @@
     "no": {
       "label": "No"
     }
+  },
+  "work-for-you": {
+    "legend": "Does this person already work for you?",
+    "yes": {
+      "label": "Yes"
+    },
+    "no": {
+      "label": "No"
+    }
+  },
+  "when-did-they-start": {
+    "legend": "When did this person start working for you?"
+  },
+  "when-did-they-start-day": {
+    "label": "Day"
+  },
+  "when-did-they-start-month": {
+    "label": "Month"
+  },
+  "when-did-they-start-year": {
+    "label": "Year"
+  },
+  "other-docs": {
+    "legend": "Does this person have any one of the following?",
+    "appeal-leave": {
+      "label": "an ongoing application or appeal for leave to remain in the UK"
+    },
+    "no-time": {
+      "label": "an application for no time limit to be added to a new passport by someone who already has indefinite leave to enter or remain in the UK"
+    },
+    "transfer-visa": {
+      "label": "an application for transferring a current visa into a new passport / Biometric Residence Permit (BRP)"
+    },
+    "brp-replace": {
+      "label": "an application for a replacement BRP"
+    },
+    "application-cert": {
+      "label": "a Certificate of Application issued to a family member of an EEA national stating that the holder is allowed to work"
+    },
+    "app-reg-card": {
+      "label": "an Application Registration Card (ARC) for an asylum seeker stating that the holder is allowed to work"
+    },
+    "none-above": {
+      "label": "none of the above"
+    }
   }
 }

@@ -1,0 +1,35 @@
+{{<layout}}
+
+    {{$journeyHeader}}
+        {{#t}}journeys.ecs.header{{/t}}
+    {{/journeyHeader}}
+
+    {{$title}}
+        {{#t}}journeys.ecs.header{{/t}}
+    {{/title}}
+
+    {{$validationSummary}}
+        {{> partials-validation-summary}}
+    {{/validationSummary}}
+
+    {{$propositionHeader}}
+        {{> partials-navigation}}
+    {{/propositionHeader}}
+
+    {{$content}}
+        {{<partials-form}}
+
+            {{$form}}
+
+                {{#radio-group}}other-docs{{/radio-group}}
+
+            {{#input-submit}}next{{/input-submit}}
+
+            {{/form}}
+        {{/partials-form}}
+
+        {{$back}}{{/back}}
+
+    {{/content}}
+
+{{/layout}}

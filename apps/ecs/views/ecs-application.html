@@ -1,39 +1,39 @@
 {{<layout}}
 
-{{$journeyHeader}}
-{{#t}}journeys.ecs.header{{/t}}
-{{/journeyHeader}}
+    {{$journeyHeader}}
+        {{#t}}journeys.ecs.header{{/t}}
+    {{/journeyHeader}}
 
-{{$validationSummary}}
-{{> partials-validation-summary}}
-{{/validationSummary}}
+    {{$title}}
+        {{#t}}journeys.ecs.header{{/t}}
+    {{/title}}
 
-{{$propositionHeader}}
-{{> partials-navigation}}
-{{/propositionHeader}}
+    {{$validationSummary}}
+        {{> partials-validation-summary}}
+    {{/validationSummary}}
 
-{{$content}}
-<!--<p class="panel-indent">{{#t}}pages.terrorism_reporting.description{{/t}}</p>-->
+    {{$propositionHeader}}
+        {{> partials-navigation}}
+    {{/propositionHeader}}
 
-<h3>{{#t}}fields.eea-passport.label{{/t}}</h3>
+    {{$content}}
 
-<div>
-    <summary id="which-countries">Which countries are in the EEA?</summary>
-    <p id="eea-countries" class="panel-indent">The EEA includes: Austria, Belgium, Bulgaria, Cyprus, Czech Republic, Denmark, Estonia,
-        Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Lithuania,
-        Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden,
-        United Kingdom.</p>
-</div>
+        <h1>{{#t}}fields.eea-passport.label{{/t}}</h1>
 
-{{<partials-form}}
+        <div>
+            <summary id="which-countries">{{#t}}pages.eea-passport.which-countries{{/t}}</summary>
+            <p id="eea-countries" class="panel-indent hidden">{{#t}}pages.eea-passport.eea-countries{{/t}}</p>
+        </div>
 
-{{$form}}
-    {{#radio-group}}eea-passport{{/radio-group}}
-    {{#input-submit}}next{{/input-submit}}
-{{/form}}
+        {{<partials-form}}
 
-{{/partials-form}}
+            {{$form}}
+                {{#radio-group}}eea-passport{{/radio-group}}
+                {{#input-submit}}next{{/input-submit}}
+            {{/form}}
 
-{{/content}}
+        {{/partials-form}}
+
+    {{/content}}
 
 {{/layout}}
