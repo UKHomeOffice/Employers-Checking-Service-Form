@@ -18,11 +18,11 @@ module.exports = {
         className: ['inline', 'form-group'],
         legend: 'fields.work-for-you.legend',
         options: [{
-            value: 'Hello',
+            value: 'Yes',
             label: 'fields.work-for-you.yes.label'
         },
         {
-            value: 'Goodbye',
+            value: 'No',
             label: 'fields.work-for-you.no.label'
         }]
     },
