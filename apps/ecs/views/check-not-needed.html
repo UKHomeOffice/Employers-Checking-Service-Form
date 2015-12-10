@@ -1,0 +1,33 @@
+{{<layout}}
+
+    {{$journeyHeader}}
+        {{#t}}journeys.ecs.header{{/t}}
+    {{/journeyHeader}}
+
+    {{$title}}
+        {{#t}}journeys.ecs.header{{/t}}
+    {{/title}}
+
+    {{$validationSummary}}
+        {{> partials-validation-summary}}
+    {{/validationSummary}}
+
+    {{$propositionHeader}}
+        {{> partials-navigation}}
+    {{/propositionHeader}}
+
+    {{$content}}
+
+        <h1>You do not need to request a Home Office right to work check</h1>
+
+        <p>If the person is from the UK, the EEA or Switzerland, or has immigration documents from the Home Office that
+            demonstrate a right to work, then you do not need to request a right to work check.</p>
+
+        <a href="https://www.gov.uk/legal-right-work-uk">You still need to check that the employee's or prospective
+            employee's documents are valid and keep copies of the documents.</a>
+
+        {{$back}}{{/back}}
+
+    {{/content}}
+
+{{/layout}}
