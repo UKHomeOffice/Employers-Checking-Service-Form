@@ -10,4 +10,9 @@ var OtherDocsController = function OtherDocsController() {
 
 util.inherits(OtherDocsController, BaseController);
 
+OtherDocsController.prototype.getValues = function getValues(req, res, callback) {
+    this.options.backLink = 'when-did-they-start';
+    BaseController.prototype.getValues.call(this, req, res, callback);
+};
+
 module.exports = OtherDocsController;
