@@ -26,7 +26,10 @@ module.exports = {
         template: 'when-did-they-start.html',
         controller: require('./controllers/when-did-they-start'),
         fields: [
-            'when-did-they-start'
+            'when-did-they-start',
+            'when-did-they-start-day',
+            'when-did-they-start-month',
+            'when-did-they-start-year',
         ],
         next: '/other-documents',
         backLink: '/ecs-application/work-for-you'

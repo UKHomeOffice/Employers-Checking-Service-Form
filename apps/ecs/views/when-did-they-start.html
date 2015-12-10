@@ -20,20 +20,18 @@
         {{<partials-form}}
 
             {{$form}}
-                <fieldset id="date-of-birth-group" class="{{#errors.date-of-birth}}validation-error{{/errors.date-of-birth}} form-group">
+                <fieldset id="date-of-birth-group" class="{{#errors.when-did-they-start}}validation-error{{/errors.when-did-they-start}} form-group">
                     <legend>
                         <span>{{#t}}fields.when-did-they-start.legend{{/t}}</span>
                     </legend>
 
-                    {{#errors.date-of-birth}}
+                    {{#errors.when-did-they-start}}
                         <span id="date-of-birth-error" class="error-message">
-                            {{errors.date-of-birth.message}}
+                            {{errors.when-did-they-start.message}}
                         </span>
-                    {{/errors.date-of-birth}}
+                    {{/errors.when-did-they-start}}
 
                     <div class="form-group form-date">
-                        <p id="date-hint" class="form-hint">
-                        </p>
                         {{#input-date}}when-did-they-start{{/input-date}}
                     </div>
                 </fieldset>
