@@ -24,7 +24,7 @@ function getOtherDocsStep(next, otherDocsValue) {
 
     if (otherDocsValue === 'appeal-leave' || otherDocsValue === 'no-time'
         || otherDocsValue === 'transfer-visa' || otherDocsValue === 'brp-replace') {
-        next = '';
+        next = 'ongoing-application-id';
     } else if (otherDocsValue === 'application-cert') {
         next = '';
     } else if (otherDocsValue === 'app-reg-card') {

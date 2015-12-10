@@ -61,6 +61,11 @@ if ($('#which-countries').length) {
   });
 }
 
+/* Show error on first page ECS */
+if ($('#eea-passport-error').length) {
+ $('#eea-passport-group').removeClass('hiddenLegend');
+}
+
 ////full-name page
 //if($('#applicant-full-name-text').length) {
 //  $('#applicant-full-name-text').blur(function() {

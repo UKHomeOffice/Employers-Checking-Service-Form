@@ -40,7 +40,7 @@ module.exports = {
         fields: [
             'other-docs'
         ],
-        next: '/hello',
+        next: '/ongoing-application-id',
         backLink: '/ecs-application/work-for-you'
     },
     '/ongoing-application-id': {
