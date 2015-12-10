@@ -20,18 +20,19 @@ function removeValueFromSession(req) {
     });
 }
 
-function getOtherDocsStep(otherDocsValue) {
+function getOtherDocsStep(next, otherDocsValue) {
 
     if (otherDocsValue === 'appeal-leave' || otherDocsValue === 'no-time'
         || otherDocsValue === 'transfer-visa' || otherDocsValue === 'brp-replace') {
-        return '';
+        next = '';
     } else if (otherDocsValue === 'application-cert') {
-        return '';
+        next = '';
     } else if (otherDocsValue === 'app-reg-card') {
-        return '';
+        next = '';
     } else if (otherDocsValue === 'none-above') {
-        return '';
+        next = '';
     }
+    return next;
 }
 
 function getBackLink(req) {
@@ -58,7 +59,7 @@ OtherDocsController.prototype.getNextStep = function getNextStep(req) {
     var next = BaseController.prototype.getNextStep.apply(this, arguments);
     var otherDocsValue = req.sessionModel.get('other-documents');
 
-    next = getOtherDocsStep(otherDocsValue);
+    next = getOtherDocsStep(next, otherDocsValue);
 
     return next;
 };
