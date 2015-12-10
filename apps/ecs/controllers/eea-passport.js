@@ -24,15 +24,4 @@ EeaPassportController.prototype.getNextStep = function getNextStep(req) {
     return next;
 };
 
-EeaPassportController.prototype.saveValues = function eeaPassportSaveValues(req, res, callback) {
-    /* Add values to session Model*/
-    var array = [];
-    var formValues = req.form.values;
-    array.push(formValues);
-
-    req.sessionModel.set('report', array);
-
-    return BaseController.prototype.saveValues.apply(this, arguments);
-};
-
 module.exports = EeaPassportController;

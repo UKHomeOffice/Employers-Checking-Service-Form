@@ -1125,14 +1125,13 @@ var hof = {
   template: require('hmpo-govuk-template'),
   Model: require('hmpo-model'),
   mixins: require('hmpo-template-mixins'),
-  controllers: require('hof-controllers'),
   i18n: require('i18n-future'),
   i18nLookup: require('i18n-lookup')
 };
 
 module.exports = hof;
 
-},{"hmpo-form-wizard":3,"hmpo-frontend-toolkit":9,"hmpo-govuk-template":3,"hmpo-model":3,"hmpo-template-mixins":3,"hof-controllers":3,"i18n-future":3,"i18n-lookup":3}],5:[function(require,module,exports){
+},{"hmpo-form-wizard":3,"hmpo-frontend-toolkit":9,"hmpo-govuk-template":3,"hmpo-model":3,"hmpo-template-mixins":3,"i18n-future":3,"i18n-lookup":3}],5:[function(require,module,exports){
 /**
  * This module adds the yellow focus border to:
  *   * labels with class block-label that are the parent element of radio buttons
@@ -1401,22 +1400,17 @@ var helpers = require('./helpers'),
 
 function inputClicked(e, target) {
     target = target || helpers.target(e);
-    var shown;
     _.each(groups[target.name], function (input) {
         var toggle = document.getElementById(input.getAttribute(toggleAttr));
         if (toggle) {
-
             if (input.checked) {
                 input.setAttribute('aria-expanded', 'true');
                 toggle.setAttribute('aria-hidden', 'false');
                 helpers.removeClass(toggle, hiddenClass);
-                shown = toggle.id;
             } else {
                 input.setAttribute('aria-expanded', 'false');
-                if (shown !== toggle.id) {
-                    toggle.setAttribute('aria-hidden', 'true');
-                    helpers.addClass(toggle, hiddenClass);
-                }
+                toggle.setAttribute('aria-hidden', 'true');
+                helpers.addClass(toggle, hiddenClass);
             }
         }
     });

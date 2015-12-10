@@ -6,9 +6,15 @@
     "required": "Please let us know whether we can contact you for more information"
   },
   "eea-passport": {
-    "required": "Select an option."
+    "required": "You must tell us whether the employee has documents that demonstrate a right to work"
   },
   "work-for-you": {
-    "required": "Select an option."
+    "required": "Please specify if this person already works for you"
+  },
+  "when-did-they-start": {
+    "required": "Enter the date this person started working for you",
+    "numeric": "Date must only contain numbers",
+    "future": "The date is in the future",
+    "format": "Enter the date in the correct format"
   }
 }
