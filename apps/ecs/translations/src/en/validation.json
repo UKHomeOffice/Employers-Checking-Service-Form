@@ -34,5 +34,11 @@
   },
   "hours-per-week": {
     "required": "Enter the hours per week"
+  },
+  "eea-passport": {
+    "required": "Select an option."
+  },
+  "work-for-you": {
+    "required": "Select an option."
   }
 }

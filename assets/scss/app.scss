@@ -71,13 +71,26 @@ legend {
 
   padding: 25px 0px;
 
+  .hiddenLegend & {
+    display: none;
+    padding: 0 !important;
+  }
+
   span {
     font-family: "nta", Arial, sans-serif;
     font-size: 25px;
     line-height: 1.25;
     font-weight: 700;
     text-transform: none;
+
+    .hidden {
+      padding: 0px !important;
+    }
   }
+}
+
+#other-docs-group label {
+  float: none !important;
 }
 
 .form-label-bold {

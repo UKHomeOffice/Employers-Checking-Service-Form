@@ -3,13 +3,13 @@
 module.exports = {
     'eea-passport': {
         validate: 'required',
-        className: ['inline', 'form-group'],
+        className: ['inline', 'form-group', 'hiddenLegend'],
         options: [{
-            value: 'yes',
+            value: 'Yes',
             label: 'fields.eea-passport.yes.label'
         },
             {
-                value: 'no',
+                value: 'No',
                 label: 'fields.eea-passport.no.label'
             }]
     },

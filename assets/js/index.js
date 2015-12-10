@@ -49,6 +49,18 @@ if ($('#application-reference-number').length) {
   });
 }
 
+if ($('#which-countries').length) {
+  $('#which-countries').click(function() {
+
+    if ($('#eea-countries').hasClass('hidden')){
+      $('#eea-countries').removeClass('hidden');
+    } else {
+      $('#eea-countries').addClass('hidden');
+    }
+
+  });
+}
+
 ////full-name page
 //if($('#applicant-full-name-text').length) {
 //  $('#applicant-full-name-text').blur(function() {

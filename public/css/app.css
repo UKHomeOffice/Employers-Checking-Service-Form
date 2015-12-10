@@ -1358,12 +1358,20 @@ summary {
 
 legend {
   padding: 25px 0px; }
+  .hiddenLegend legend {
+    display: none;
+    padding: 0 !important; }
   legend span {
     font-family: "nta", Arial, sans-serif;
     font-size: 25px;
     line-height: 1.25;
     font-weight: 700;
     text-transform: none; }
+    legend span .hidden {
+      padding: 0px !important; }
+
+#other-docs-group label {
+  float: none !important; }
 
 .form-label-bold {
   font-family: "nta", Arial, sans-serif;
