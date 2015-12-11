@@ -70,6 +70,7 @@
     "email": "Enter your email in the correct format for example, name@domain.com"
   },
   "employer-confirm-email-address":{
-    "required": "Enter the confirm contact email address"
+    "required": "Enter the confirm contact email address",
+    "notMatched": "Please ensure the contact confirmation email address matches the contact email address."
   }
 }

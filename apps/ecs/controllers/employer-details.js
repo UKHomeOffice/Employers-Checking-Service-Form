@@ -13,8 +13,15 @@ var EmployerDetailsController = function EmployerDetailsController() {
 util.inherits(EmployerDetailsController, BaseController);
 
 EmployerDetailsController.prototype.validateField = function validateField(key, req) {
-    //TODO validate email and confirm email id same , otherwise throw
-    //Please ensure the contact confirmation email address matches the contact email address.
+
+// custom validation matching email with confirm email field
+    if ((key.indexOf('employer-confirm-email-address') !== -1) && req.form.values['employer-contact-email-address'] !== req.form.values['employer-confirm-email-address']) {
+        return new ErrorClass('employer-confirm-email-address', {
+            key: 'employer-confirm-email-address',
+            type: 'notMatched',
+            redirect: undefined
+        });
+    }
     return BaseController.prototype.validateField.apply(this, arguments);
 };
 
