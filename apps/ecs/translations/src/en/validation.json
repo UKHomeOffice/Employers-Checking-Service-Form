@@ -66,7 +66,8 @@
     "required": "Enter the contact telephone"
   },
   "employer-contact-email-address":{
-    "required": "Enter the contact email address"
+    "required": "Enter the contact email address",
+    "email": "Enter your email in the correct format for example, name@domain.com"
   },
   "employer-confirm-email-address":{
     "required": "Enter the confirm contact email address"

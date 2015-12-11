@@ -74,6 +74,7 @@ module.exports = {
         next: '/employer-details'
     },
     '/employer-details':{
+        controller: require('./controllers/employer-details'),
         fields:[
             'business-name',
             'type-of-business',

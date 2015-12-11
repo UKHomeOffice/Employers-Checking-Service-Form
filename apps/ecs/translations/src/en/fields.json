@@ -30,7 +30,7 @@
     "label": "Year"
   },
   "nationality": {
-    "label": "Country of nationality"
+    "label": "Nationality"
   },
   "job-title":{
     "label": "Job title"

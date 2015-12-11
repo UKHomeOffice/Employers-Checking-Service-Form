@@ -40,11 +40,11 @@ module.exports = {
         label: 'fields.employer-contact-telephone.label'
     },
     'employer-contact-email-address':{
-        validate: ['required'],
+        validate: ['required','email'],
         label: 'fields.employer-contact-email-address.label'
     },
     'employer-confirm-email-address':{
-        validate: ['required'],
+        validate: ['required','email'],
         label: 'fields.employer-confirm-email-address.label'
     }
 }
