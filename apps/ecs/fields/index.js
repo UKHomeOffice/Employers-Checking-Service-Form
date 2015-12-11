@@ -8,5 +8,6 @@ module.exports = _.extend(
     require('./employee-details'),
     require('./work-for-you'),
     require('./when-did-they-start'),
-    require('./other-documents')
+    require('./other-documents'),
+    require('./employer-details')
 );

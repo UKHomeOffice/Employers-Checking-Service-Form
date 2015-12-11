@@ -11,6 +11,9 @@
   "ongoing-application-id-number": {
     "required": " This is a required field and must be completed."
   },
+  "employee-name-text":{
+    "required": " Enter the full name"
+  },
   "date-of-birth": {
     "required": "Enter your date of birth",
     "numeric": "Date must only contain numbers",
@@ -49,5 +52,23 @@
     "numeric": "Date must only contain numbers",
     "future": "The date is in the future",
     "format": "Enter the date in the correct format"
+  },
+  "business-name":{
+    "required": "Enter the business name"
+  },
+  "type-of-business":{
+    "required": "Enter the type of business"
+  },
+  "employer-contact-name":{
+    "required": "Enter the employer's contact name"
+  },
+  "employer-contact-telephone":{
+    "required": "Enter the contact telephone"
+  },
+  "employer-contact-email-address":{
+    "required": "Enter the contact email address"
+  },
+  "employer-confirm-email-address":{
+    "required": "Enter the confirm contact email address"
   }
 }

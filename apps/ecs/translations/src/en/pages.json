@@ -26,6 +26,9 @@
   "employee-details":{
     "label": "Request a Home Office right to work check",
     "legend": "Employee's or prospective employee's details"
-
+  },
+  "employer-details":{
+    "label": "Request a Home Office right to work check",
+    "legend": "Employer's or labour supplier's details"
   }
 }

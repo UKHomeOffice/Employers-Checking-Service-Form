@@ -1,0 +1,57 @@
+{{<layout}}
+
+{{$journeyHeader}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/journeyHeader}}
+
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+{{<partials-form}}
+
+{{$form}}
+<div> </div>
+<h1>{{#t}}pages.employer-details.label{{/t}} </h1>
+
+<h3>{{#t}}pages.employer-details.legend{{/t}} </h3>
+
+
+{{#input-text}}business-name{{/input-text}}
+{{#input-text}}type-of-business{{/input-text}}
+
+{{#input-text}}employer-uk-address-house-number{{/input-text}}
+
+{{#input-text}}employer-uk-address-street{{/input-text}}
+
+{{#input-text}}employer-uk-address-town{{/input-text}}
+
+{{#input-text}}employer-uk-address-county{{/input-text}}
+
+{{#input-text-code}}employer-uk-address-postcode{{/input-text-code}}
+
+{{#input-text}}employer-contact-name{{/input-text}}
+
+{{#input-text-code}}employer-job-title{{/input-text-code}}
+
+{{#input-text}}employer-contact-telephone{{/input-text}}
+
+{{#input-text}}employer-contact-email-address{{/input-text}}
+
+{{#input-text}}employer-confirm-email-address{{/input-text}}
+
+{{#input-submit}}next{{/input-submit}}
+
+{{/form}}
+
+{{/partials-form}}
+
+{{/content}}
+
+{{/layout}}

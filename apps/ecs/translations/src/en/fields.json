@@ -82,5 +82,44 @@
     "none-above": {
       "label": "none of the above"
     }
-  }
+  },
+    "business-name":{
+      "label": "Business name"
+    },
+    "type-of-business":{
+      "label": "Type of business"
+    },
+    "employers-contact-name":{
+      "label": "Type of business"
+    },
+    "contact-telephone":{
+      "label": "Type of business"
+    },
+    "contact-email-address":{
+      "label": "Type of business"
+    },
+    "contact-email-address":{
+      "label": "Type of business"
+    },
+    "employer-uk-address-house-number": {
+      "label": "Business address line 1"
+    },
+    "employer-uk-address-street": {
+      "label": "Address line 2 (optional)"
+    },
+    "employer-uk-address-postcode": {
+      "label": "Postcode (eg M60 2LA)"
+    },
+    "employer-contact-name":{
+      "label": "Employer's contact name"
+    },
+    "employer-contact-telephone":{
+      "label": "Contact telephone"
+    },
+    "employer-contact-email-address":{
+      "label": "Contact email address  This needs to be the email address of the employer submitting the check"
+    },
+    "employer-confirm-email-address":{
+      "label": "Confirm contact email address"
+    }
 }

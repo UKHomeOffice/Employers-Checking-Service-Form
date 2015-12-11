@@ -72,5 +72,24 @@ module.exports = {
         ],
         backLink: 'conduct-right-work',
         next: '/employer-details'
+    },
+    '/employer-details':{
+        fields:[
+            'business-name',
+            'type-of-business',
+            'employer-uk-address-house-number',
+            'employer-uk-address-street',
+            'employer-uk-address-town',
+            'employer-uk-address-county',
+            'employer-uk-address-postcode',
+            'employer-contact-name',
+            'employer-job-title',
+            'employer-contact-telephone',
+            'employer-contact-email-address',
+            'employer-confirm-email-address'
+        ],
+        backList: 'employee-details',
+        next: '/confirm'
+
     }
 }

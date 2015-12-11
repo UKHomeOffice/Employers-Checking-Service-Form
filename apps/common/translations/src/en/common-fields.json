@@ -15,6 +15,6 @@
     "label": "County (optional)"
   },
   "address-postcode": {
-    "label": "Postcode"
+    "label": "Postcode (eg M60 2LA)"
   }
 }
