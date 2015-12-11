@@ -57,6 +57,7 @@ module.exports = {
         controller: require('../common/controllers/personal-details'),
         fields: [
             'employee-name-text',
+            'nationality',
             'date-of-birth',
             'date-of-birth-day',
             'date-of-birth-month',

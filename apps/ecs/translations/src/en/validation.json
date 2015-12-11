@@ -17,6 +17,9 @@
     "future": "The date is in the future",
     "format": "Enter your date of birth in the correct format"
   },
+  "nationality":{
+    "required": "Enter your nationality"
+  },
   "uk-address-house-number": {
     "required": "Enter your house name or number"
   },
