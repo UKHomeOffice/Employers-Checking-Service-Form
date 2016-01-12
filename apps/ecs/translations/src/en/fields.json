@@ -14,7 +14,7 @@
     "label":" "
   },
   "employee-name-text":{
-    "label": "Full name, including middle names mandatory field"
+    "label": "Full name (including middle names)"
   },
   "date-of-birth": {
     "legend": "Date of birth",
@@ -117,9 +117,15 @@
       "label": "Contact telephone"
     },
     "employer-contact-email-address":{
-      "label": "Contact email address  This needs to be the email address of the employer submitting the check"
+      "label": "Contact email address. <br/> This needs to be the email address of the employer submitting the check"
     },
     "employer-confirm-email-address":{
       "label": "Confirm contact email address"
+    },
+    "address": {
+      "label": "Address"
+    },
+    "business-address": {
+      "label": "Business address"
     }
 }

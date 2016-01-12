@@ -30,5 +30,8 @@
   "employer-details":{
     "label": "Request a Home Office right to work check",
     "legend": "Employer's or labour supplier's details"
+  },
+  "confirm":{
+    "header": "Summary"
   }
 }
