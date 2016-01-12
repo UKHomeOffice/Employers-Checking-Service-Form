@@ -7,7 +7,7 @@ module.exports = {
         options: [{
             value: 'appeal-leave',
             label: 'fields.other-docs.appeal-leave.label'
-        },
+            },
             {
                 value: 'no-time',
                 label: 'fields.other-docs.no-time.label'

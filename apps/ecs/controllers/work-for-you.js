@@ -17,6 +17,7 @@ WorkForYouController.prototype.getNextStep = function getNextStep(req) {
     if (workForYouValue === 'Yes') {
         next = "when-did-they-start";
     } else if (workForYouValue === 'No') {
+        req.sessionModel.unset('when-did-they-start');
         next = "other-documents";
     }
 
