@@ -117,7 +117,7 @@
       "label": "Contact telephone"
     },
     "employer-contact-email-address":{
-      "label": "Contact email address. <br/> This needs to be the email address of the employer submitting the check"
+      "label": "Contact email address <br/> This needs to be the email address of the employer submitting the check"
     },
     "employer-confirm-email-address":{
       "label": "Confirm contact email address"
@@ -127,5 +127,8 @@
     },
     "business-address": {
       "label": "Business address"
+    },
+    "confirm-email-address":{
+      "label":"Contact email address"
     }
 }

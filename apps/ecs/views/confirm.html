@@ -31,6 +31,26 @@ v{{<layout}}
 
 {{$form}}
 
+
+<table id="form-details" class="table-details">
+    <tr>
+        <td>{{#t}}fields.work-for-you.legend{{/t}}</td>
+        <td>{{values.work-for-you}}</td>
+        <td><a href="work-for-you" class="button">{{#t}}buttons.change{{/t}}</a></td>
+    </tr>
+
+    {{#values.when-did-they-start}}
+    <tr>
+        <td>{{#t}}fields.when-did-they-start.legend{{/t}}</td>
+        <td>{{values.when-did-they-start-formatted}}</td>
+        <td><a href="when-did-they-start/edit#" class="button">{{#t}}buttons.change{{/t}}</a></td>
+    </tr>
+    {{/values.when-did-they-start}}
+
+</table>
+
+<br/>
+
 <h3>{{#t}}pages.employee-details.legend{{/t}} </h3>
 
 <table id="employee-details" class="table-details">
@@ -52,11 +72,11 @@ v{{<layout}}
     </tr>
     {{#values.uk-address-street}}
     <tr>
-        <td>{{#t}}fields.address{{/t}}</td>
+        <td>{{#t}}fields.address.label{{/t}}</td>
         <td>
             {{values.uk-address-house-number}} {{values.uk-address-street}},</br>
             {{values.uk-address-town}},</br>
-            {{#values.uk-address-county}}{{values.uk-address-county}},{{/values.uk-address-county}}</br>
+            {{#values.uk-address-county}}{{values.uk-address-county}},</br>{{/values.uk-address-county}}
             {{values.uk-address-postcode}}
         </td>
         <td><a href="employee-details/edit#uk-address-group" class="button">{{#t}}buttons.change{{/t}}</a></td>
@@ -79,7 +99,7 @@ v{{<layout}}
 
 </table>
 
-<br/> 
+<br/>
 
 <h3>{{#t}}pages.employer-details.legend{{/t}} </h3>
 
@@ -91,55 +111,59 @@ v{{<layout}}
         <td><a href="employer-details/edit#business-name" class="button">{{#t}}buttons.change{{/t}}</a></td>
     </tr>
     <tr>
-        <td>{{#t}}pages.check-details.table.headers.date-of-birth{{/t}}</td>
-        <td>{{values.date-of-birth-formatted}}</td>
-        <td><a href="employee-details/edit#date-of-birth-day" class="button">{{#t}}buttons.change{{/t}}</a></td>
+        <td>{{#t}}fields.type-of-business.label{{/t}}</td>
+        <td>{{values.type-of-business}}</td>
+        <td><a href="employer-details/edit#type-of-business" class="button">{{#t}}buttons.change{{/t}}</a></td>
     </tr>
+
+    {{#values.employer-uk-address-street}}
     <tr>
-        <td>{{#t}}pages.check-details.table.headers.nationality{{/t}}</td>
-        <td>{{values.nationality}}</td>
-        <td><a href="employee-details/edit#nationality" class="button">{{#t}}buttons.change{{/t}}</a></td>
-    </tr>
-    {{#values.no-email}}
-    {{#values.contact-address-street}}
-    <tr>
-        <td>{{#t}}pages.check-details.table.headers.contact-address{{/t}}</td>
+        <td>{{#t}}fields.business-address.label{{/t}}</td>
         <td>
-            {{values.contact-address-house-number}} {{values.contact-address-street}},
-            {{values.contact-address-town}},
-            {{#values.contact-address-county}}{{values.contact-address-county}},{{/values.contact-address-county}}
-            {{values.contact-address-postcode}}
+            {{values.employer-uk-address-house-number}} {{values.employer-uk-address-street}},</br>
+            {{values.employer-uk-address-town}},</br>
+            {{#values.employer-uk-address-county}}{{values.employer-uk-address-county}},</br> {{/values.employer-uk-address-county}}
+            {{values.employer-uk-address-postcode}}
         </td>
-        <td><a href="contact-details/edit#address-group" class="button">{{#t}}buttons.change{{/t}}</a></td>
+        <td><a href="contact-details/edit#employer-uk-address-group" class="button">{{#t}}buttons.change{{/t}}</a></td>
     </tr>
-    {{/values.contact-address-street}}
-    {{/values.no-email}}
-    {{#values.brp-card}}
+    {{/values.employer-uk-address-street}}
+
+    {{#values.employer-contact-name}}
     <tr>
-        <td>{{#t}}pages.check-details.table.headers.brp-card-number{{/t}}</td>
-        <td>{{values.brp-card}}</td>
-        <td><a href="employee-details/edit#brp-card" class="button">{{#t}}buttons.change{{/t}}</a></td>
+        <td>{{#t}}fields.employer-contact-name.label{{/t}}</td>
+        <td>{{values.employer-contact-name}}</td>
+        <td><a href="employer-details/edit#employer-contact-name" class="button">{{#t}}buttons.change{{/t}}</a></td>
     </tr>
-    {{/values.brp-card}}
-    {{#values.email}}
+    {{/values.employer-contact-name}}
+
+    {{#values.employer-job-title}}
     <tr>
-        <td>{{#t}}pages.check-details.table.headers.email{{/t}}</td>
-        <td>{{values.email}}</td>
-        <td><a href="contact-details/edit#email" class="button">{{#t}}buttons.change{{/t}}</a></td>
+        <td>{{#t}}fields.employer-job-title.label{{/t}}</td>
+        <td>{{values.employer-job-title}}</td>
+        <td><a href="employer-details/edit#employer-job-title" class="button">{{#t}}buttons.change{{/t}}</a></td>
     </tr>
-    {{/values.email}}
-    {{#values.phone}}
+    {{/values.employer-job-title}}
+
+    {{#values.employer-contact-telephone}}
     <tr>
-        <td>{{#t}}pages.check-details.table.headers.phone{{/t}}</td>
-        <td>{{values.phone}}</td>
-        <td><a href="contact-details/edit#phone" class="button">{{#t}}buttons.change{{/t}}</a></td>
+        <td>{{#t}}fields.employer-contact-telephone.label{{/t}}</td>
+        <td>{{values.employer-contact-telephone}}</td>
+        <td><a href="employer-details/edit#employer-contact-telephone" class="button">{{#t}}buttons.change{{/t}}</a></td>
     </tr>
-    {{/values.phone}}
+    {{/values.employer-contact-telephone}}
+    {{#values.employer-contact-email-address}}
+    <tr>
+        <td>{{#t}}fields.confirm-email-address.label{{/t}}</td>
+        <td>{{values.employer-contact-email-address}}</td>
+        <td><a href="employer-details/edit#employer-contact-email-address" class="button">{{#t}}buttons.change{{/t}}</a></td>
+    </tr>
+    {{/values.employer-contact-email-address}}
 </table>
-{{<partials-org-type}}{{/partials-org-type}}
 
+<br/>
 
-{{#input-submit}}confirm{{/input-submit}}
+{{#input-submit}}send{{/input-submit}}
 
 {{/form}}
 
