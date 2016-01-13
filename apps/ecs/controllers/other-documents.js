@@ -21,16 +21,13 @@ function removeValueFromSession(req) {
 }
 
 function getOtherDocsStep(next, otherDocsValue) {
-
     if (otherDocsValue === 'appeal-leave' || otherDocsValue === 'no-time'
         || otherDocsValue === 'transfer-visa' || otherDocsValue === 'brp-replace') {
-        next = 'ongoing-application-id';
-    } else if (otherDocsValue === 'application-cert') {
-        next = '';
-    } else if (otherDocsValue === 'app-reg-card') {
+        next = '/ongoing-application-id';
+    } else if (otherDocsValue === 'application-cert' || otherDocsValue === 'app-reg-card') {
         next = '';
     } else if (otherDocsValue === 'none-above') {
-        next = '';
+        next = '/settlement-protection';
     }
     return next;
 }
@@ -57,11 +54,11 @@ OtherDocsController.prototype.getValues = function getValues(req, res, callback)
 
 OtherDocsController.prototype.getNextStep = function getNextStep(req) {
     var next = BaseController.prototype.getNextStep.apply(this, arguments);
-    var otherDocsValue = req.sessionModel.get('other-documents');
+    var otherDocsValue = req.sessionModel.get('other-docs');
 
     next = getOtherDocsStep(next, otherDocsValue);
-
-    return next;
+    this.options.next = next;
+    return req.baseUrl + next;
 };
 
 module.exports = OtherDocsController;

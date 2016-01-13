@@ -40,14 +40,19 @@ module.exports = {
         fields: [
             'other-docs'
         ],
-        next: '/ongoing-application-id',
         backLink: '/ecs-application/work-for-you'
+    },
+    '/settlement-protection':{
+        template: 'settlement-protection.html',
+        next: '/conduct-right-work',
+        backLink: '/other-documents'
     },
     '/ongoing-application-id': {
         fields: [
             'ongoing-application-id-number'
         ],
-        next: '/conduct-right-work'
+        next: '/conduct-right-work',
+        backLink: '/ecs-application/other-documents'
     },
     '/conduct-right-work':{
         backLink: 'ongoing-application-id',
