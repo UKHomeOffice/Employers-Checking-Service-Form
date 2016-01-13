@@ -9,5 +9,7 @@ module.exports = _.extend(
     require('./work-for-you'),
     require('./when-did-they-start'),
     require('./other-documents'),
-    require('./employer-details')
+    require('./employer-details'),
+    require('./settlement-protection')
+
 );

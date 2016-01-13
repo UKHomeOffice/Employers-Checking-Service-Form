@@ -1,12 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Settlement Protection</title>
-</head>
-<body>
+{{<layout}}
 
-Has this person made an application for, or do they qualify for, settlement protection?
+{{$journeyHeader}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/journeyHeader}}
 
-</body>
-</html>
+{{$title}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/title}}
+
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+{{<partials-form}}
+
+    {{$form}}
+    {{#radio-group}}settlement-protection{{/radio-group}}
+    {{#input-submit}}next{{/input-submit}}
+    {{/form}}
+
+{{/partials-form}}
+
+{{/content}}
+
+{{/layout}}

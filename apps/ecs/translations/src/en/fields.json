@@ -13,6 +13,15 @@
     "labelText": "Please provide the reference number of an on-going application or its Case ID",
     "label":" "
   },
+  "settlement-protection": {
+    "legend": "Has this person made an application for, or do they qualify for, settlement protection?",
+    "yes": {
+      "label": "Yes"
+    },
+    "no": {
+      "label": "No"
+    }
+  },
   "employee-name-text":{
     "label": "Full name (including middle names)"
   },

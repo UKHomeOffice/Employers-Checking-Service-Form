@@ -44,8 +44,11 @@ module.exports = {
     },
     '/settlement-protection':{
         template: 'settlement-protection.html',
+        fields: [
+            'settlement-protection'
+        ],
         next: '/conduct-right-work',
-        backLink: '/other-documents'
+        backLink: 'other-documents'
     },
     '/ongoing-application-id': {
         fields: [
@@ -55,6 +58,7 @@ module.exports = {
         backLink: '/ecs-application/other-documents'
     },
     '/conduct-right-work':{
+        //TODO
         backLink: 'ongoing-application-id',
         next: '/employee-details'
     },
@@ -99,33 +103,6 @@ module.exports = {
     },
     '/confirm':{
         controller: require('../common/controllers/confirm'),
-        fields: [
-            'employee-name-text',
-            'nationality',
-            'date-of-birth',
-            'date-of-birth-day',
-            'date-of-birth-month',
-            'date-of-birth-year',
-            'uk-address-house-number',
-            'uk-address-street',
-            'uk-address-town',
-            'uk-address-county',
-            'uk-address-postcode',
-            'job-title',
-            'hours-per-week',
-            'business-name',
-            'type-of-business',
-            'employer-uk-address-house-number',
-            'employer-uk-address-street',
-            'employer-uk-address-town',
-            'employer-uk-address-county',
-            'employer-uk-address-postcode',
-            'employer-contact-name',
-            'employer-job-title',
-            'employer-contact-telephone',
-            'employer-contact-email-address',
-            'employer-confirm-email-address'
-        ],
         backLink: 'employer-details',
         next: '/confirmation'
     },

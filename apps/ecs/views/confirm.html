@@ -53,6 +53,14 @@ v{{<layout}}
         <td><a href="other-documents" class="button">{{#t}}buttons.change{{/t}}</a></td>
     </tr>
 
+    {{#values.settlement-protection}}
+    <tr>
+        <td>{{#t}}fields.settlement-protection.legend{{/t}}</td>
+        <td>{{values.settlement-protection}}</td>
+        <td><a href="settlement-protection/edit#" class="button">{{#t}}buttons.change{{/t}}</a></td>
+    </tr>
+    {{/values.settlement-protection}}
+
     {{#values.ongoing-application-id-number}}
     <tr>
         <td>{{#t}}fields.ongoing-application-id-number.labelText{{/t}}</td>
