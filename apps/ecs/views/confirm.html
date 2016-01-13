@@ -52,6 +52,15 @@ v{{<layout}}
         <td> {{#t}}fields.other-docs.{{values.other-docs}}.label{{/t}} </td>
         <td><a href="other-documents" class="button">{{#t}}buttons.change{{/t}}</a></td>
     </tr>
+
+    {{#values.ongoing-application-id-number}}
+    <tr>
+        <td>{{#t}}fields.ongoing-application-id-number.labelText{{/t}}</td>
+        <td>{{values.ongoing-application-id-number}}</td>
+        <td><a href="ongoing-application-id/edit#" class="button">{{#t}}buttons.change{{/t}}</a></td>
+    </tr>
+    {{/values.ongoing-application-id-number}}
+
 </table>
 
 <br/>
