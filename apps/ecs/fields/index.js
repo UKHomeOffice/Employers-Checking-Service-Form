@@ -10,6 +10,7 @@ module.exports = _.extend(
     require('./when-did-they-start'),
     require('./other-documents'),
     require('./employer-details'),
-    require('./settlement-protection')
+    require('./settlement-protection'),
+    require('./original-document')
 
 );

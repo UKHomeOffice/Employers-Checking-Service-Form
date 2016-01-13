@@ -22,6 +22,15 @@
       "label": "No"
     }
   },
+  "original-document": {
+    "legend": "Have you seen the original document?",
+    "yes": {
+      "label": "Yes"
+    },
+    "no": {
+      "label": "No"
+    }
+  },
   "employee-name-text":{
     "label": "Full name (including middle names)"
   },

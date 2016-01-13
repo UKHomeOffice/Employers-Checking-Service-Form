@@ -33,5 +33,9 @@
   },
   "confirm":{
     "header": "Summary"
+  },
+  "must-seen-original-document":{
+    "label": "You must have seen the original document",
+    "legend": "You must have seen the original Application Registration Card to request a right to work check. The purpose of this tool is to check the validity of documents you have seen."
   }
 }

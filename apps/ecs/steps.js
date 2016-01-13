@@ -42,6 +42,18 @@ module.exports = {
         ],
         backLink: '/ecs-application/work-for-you'
     },
+    '/original-document':{
+        controller: require('./controllers/original-document'),
+        template: 'original-document.html',
+        fields: [
+            'original-document'
+        ],
+        backLink: 'other-documents'
+    },
+    '/must-seen-original-document':{
+        template: 'must-seen-original-document.html',
+        backLink: 'original-document'
+    },
     '/settlement-protection':{
         template: 'settlement-protection.html',
         fields: [

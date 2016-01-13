@@ -1,0 +1,30 @@
+{{<layout}}
+
+    {{$journeyHeader}}
+    {{#t}}journeys.ecs.header{{/t}}
+    {{/journeyHeader}}
+
+    {{$title}}
+    {{#t}}journeys.ecs.header{{/t}}
+    {{/title}}
+
+    {{$validationSummary}}
+    {{> partials-validation-summary}}
+    {{/validationSummary}}
+
+    {{$propositionHeader}}
+    {{> partials-navigation}}
+    {{/propositionHeader}}
+
+    {{$content}}
+
+    {{<partials-form}}
+    {{$form}}
+    <h3>{{#t}}pages.must-seen-original-document.label{{/t}} </h3>
+    <p>{{#t}}pages.must-seen-original-document.legend{{/t}} </p>
+    {{/form}}
+    {{/partials-form}}
+
+    {{/content}}
+
+{{/layout}}

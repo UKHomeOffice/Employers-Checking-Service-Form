@@ -23,11 +23,11 @@ function removeValueFromSession(req) {
 function getOtherDocsStep(next, otherDocsValue) {
     if (otherDocsValue === 'appeal-leave' || otherDocsValue === 'no-time'
         || otherDocsValue === 'transfer-visa' || otherDocsValue === 'brp-replace') {
-        next = '/ongoing-application-id';
+        next = 'ongoing-application-id';
     } else if (otherDocsValue === 'application-cert' || otherDocsValue === 'app-reg-card') {
-        next = '';
+        next = 'original-document';
     } else if (otherDocsValue === 'none-above') {
-        next = '/settlement-protection';
+        next = 'settlement-protection';
     }
     return next;
 }
@@ -58,7 +58,7 @@ OtherDocsController.prototype.getNextStep = function getNextStep(req) {
 
     next = getOtherDocsStep(next, otherDocsValue);
     this.options.next = next;
-    return req.baseUrl + next;
+    return next;
 };
 
 module.exports = OtherDocsController;
