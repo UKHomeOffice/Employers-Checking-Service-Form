@@ -1,0 +1,36 @@
+{{<layout}}
+
+{{$journeyHeader}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/journeyHeader}}
+
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+{{<partials-form}}
+
+{{$form}}
+<div> </div>
+<h3>{{#t}}pages.arc-card-details.label{{/t}} </h3>
+
+ {{#input-text}}arc-serial-number{{/input-text}}
+
+<br/>
+
+ {{#input-text}}ifb-ref-number{{/input-text}}
+
+{{#input-submit}}next{{/input-submit}}
+{{/form}}
+
+{{/partials-form}}
+
+{{/content}}
+
+{{/layout}}

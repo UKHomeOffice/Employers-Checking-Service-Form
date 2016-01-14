@@ -11,6 +11,7 @@ module.exports = _.extend(
     require('./other-documents'),
     require('./employer-details'),
     require('./settlement-protection'),
-    require('./original-document')
+    require('./original-document'),
+    require('./arc-card-details')
 
 );

@@ -37,5 +37,9 @@
   "must-seen-original-document":{
     "label": "You must have seen the original document",
     "legend": "You must have seen the original Application Registration Card to request a right to work check. The purpose of this tool is to check the validity of documents you have seen."
+  },
+  "arc-card-details":{
+    "label": "Please provide the following details, which are on the reverse left of the ARC card:"
+
   }
 }

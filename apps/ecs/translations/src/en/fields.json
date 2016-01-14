@@ -148,5 +148,11 @@
     },
     "confirm-email-address":{
       "label":"Contact email address"
+    },
+    "ifb-ref-number":{
+      "label":"Immigration Fingerprint Bureau (IFB) reference number"
+    },
+    "arc-serial-number":{
+      "label":"ARC serial number"
     }
 }

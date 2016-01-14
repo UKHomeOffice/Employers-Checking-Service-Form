@@ -54,6 +54,15 @@ module.exports = {
         template: 'must-seen-original-document.html',
         backLink: 'original-document'
     },
+    '/arc-card-details':{
+        template: 'arc-card-details.html',
+        fields: [
+            'arc-serial-number',
+            'ifb-ref-number'
+        ],
+        backLink: 'original-document',
+        next: '/conduct-right-work',
+    },
     '/settlement-protection':{
         template: 'settlement-protection.html',
         fields: [
@@ -67,7 +76,7 @@ module.exports = {
             'ongoing-application-id-number'
         ],
         next: '/conduct-right-work',
-        backLink: '/ecs-application/other-documents'
+        backLink: 'other-documents'
     },
     '/conduct-right-work':{
         //TODO

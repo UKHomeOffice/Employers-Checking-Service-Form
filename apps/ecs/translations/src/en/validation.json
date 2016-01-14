@@ -72,5 +72,14 @@
   "employer-confirm-email-address":{
     "required": "Enter the confirm contact email address",
     "notMatched": "Please ensure the contact confirmation email address matches the contact email address."
+  },
+  "arc-serial-number":{
+    "required": "Enter an ARC serial number"
+  },
+  "ifb-ref-number":{
+    "required": "Enter an IFB reference."
   }
+
+
+
 }
