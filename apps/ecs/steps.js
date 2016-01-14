@@ -64,12 +64,17 @@ module.exports = {
         next: '/conduct-right-work',
     },
     '/settlement-protection':{
+        controller: require('./controllers/settlement-protection'),
         template: 'settlement-protection.html',
         fields: [
             'settlement-protection'
         ],
-        next: '/conduct-right-work',
         backLink: 'other-documents'
+    },
+    '/insufficient-information':{
+        template: 'insufficient-information.html',
+        backLink: 'settlement-protection'
+
     },
     '/ongoing-application-id': {
         fields: [
@@ -79,7 +84,7 @@ module.exports = {
         backLink: 'other-documents'
     },
     '/conduct-right-work':{
-        //TODO
+        //TODO habdle back link
         backLink: 'ongoing-application-id',
         next: '/employee-details'
     },
