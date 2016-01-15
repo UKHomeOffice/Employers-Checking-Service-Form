@@ -3,11 +3,24 @@
 module.exports = {
     '/': {
         template: 'ecs-application.html',
-        controller: require('./controllers/eea-passport'),
         fields: [
             'eea-passport'
         ],
-        next: '/check-not-needed'
+        next: '/check-not-needed',
+        forks: [
+            {
+                target: '/check-not-needed',
+                condition: function checkForOptionY(req) {
+                    return req.form.values['eea-passport'] === "Yes";
+                }
+            },
+            {
+                target: '/work-for-you',
+                condition: function checkForOptionN(req) {
+                    return req.form.values['eea-passport'] === "No";
+                }
+            },
+        ]
     },
     '/check-not-needed': {
         backLink: '/ecs-application'
