@@ -64,29 +64,30 @@ module.exports = {
         next: '/conduct-right-work',
     },
     '/settlement-protection':{
-        controller: require('./controllers/settlement-protection'),
+        //controller: require('./controllers/settlement-protection'),
         fields: [
             'settlement-protection'
         ],
         backLink: 'other-documents',
         next: '/conduct-right-work',
-        //forks: [
-        //    {
-        //        target: '/conduct-right-work',
-        //        condition: function checkForOptionY(req) {
-        //            return req.form.values['settlement-protection'] === "Yes";
-        //        }
-        //    },
-        //    {
-        //        target: '/insufficient-information',
-        //        condition: function checkForOptionN(req) {
-        //            return req.form.values['settlement-protection'] === "No";
-        //        }
-        //    },
-        //]
+        forks: [
+            {
+                target: '/conduct-right-work',
+                condition: function checkForOptionY(req) {
+                    return req.form.values['settlement-protection'] === "Yes";
+                }
+            },
+            {
+                target: '/insufficient-information',
+                condition: function checkForOptionN(req) {
+                    return req.form.values['settlement-protection'] === "No";
+                }
+            },
+        ]
     },
     '/insufficient-information':{
         template: 'insufficient-information.html',
+        prereqs:['/settlement-protection'],
         backLink: 'settlement-protection'
     },
     '/ongoing-application-id': {
@@ -97,9 +98,11 @@ module.exports = {
         backLink: 'other-documents'
     },
     '/conduct-right-work':{
-        //TODO habdle back link
-        backLink: 'ongoing-application-id',
-        next: '/employee-details'
+        //controller: require('./controllers/conduct-right-work'),
+        //backLink: 'ongoing-application-id',
+        next: '/employee-details',
+        backLinks:['arc-card-details','settlement-protection','ongoing-application-id']
+
     },
     '/employee-details': {
         controller: require('../common/controllers/personal-details'),
