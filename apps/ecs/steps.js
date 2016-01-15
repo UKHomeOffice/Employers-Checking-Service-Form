@@ -65,16 +65,29 @@ module.exports = {
     },
     '/settlement-protection':{
         controller: require('./controllers/settlement-protection'),
-        template: 'settlement-protection.html',
         fields: [
             'settlement-protection'
         ],
-        backLink: 'other-documents'
+        backLink: 'other-documents',
+        next: '/conduct-right-work',
+        //forks: [
+        //    {
+        //        target: '/conduct-right-work',
+        //        condition: function checkForOptionY(req) {
+        //            return req.form.values['settlement-protection'] === "Yes";
+        //        }
+        //    },
+        //    {
+        //        target: '/insufficient-information',
+        //        condition: function checkForOptionN(req) {
+        //            return req.form.values['settlement-protection'] === "No";
+        //        }
+        //    },
+        //]
     },
     '/insufficient-information':{
         template: 'insufficient-information.html',
         backLink: 'settlement-protection'
-
     },
     '/ongoing-application-id': {
         fields: [
