@@ -6,5 +6,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="ECS node_modules" level="project" />
+    <orderEntry type="library" name="Employers-Checking-Service-Form node_modules" level="project" />
   </component>
 </module>

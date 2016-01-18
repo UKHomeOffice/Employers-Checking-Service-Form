@@ -60,6 +60,17 @@ if ($('#which-countries').length) {
 
   });
 }
+if ($('#what-is-tupe').length) {
+  $('#what-is-tupe').click(function() {
+
+    if ($('#tupe-description').hasClass('hidden')){
+      $('#tupe-description').removeClass('hidden');
+    } else {
+      $('#tupe-description').addClass('hidden');
+    }
+
+  });
+}
 
 /* Show error on first page ECS */
 if ($('#eea-passport-error').length) {

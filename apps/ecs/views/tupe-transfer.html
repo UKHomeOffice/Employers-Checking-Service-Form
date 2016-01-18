@@ -1,0 +1,39 @@
+{{<layout}}
+
+{{$journeyHeader}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/journeyHeader}}
+
+{{$title}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/title}}
+
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+<h1>{{#t}}fields.tupe-transfer.label{{/t}}</h1>
+
+<div>
+    <summary id="which-is-tupe">{{#t}}pages.tupe-transfer.what-is-tupe{{/t}}</summary>
+    <p id="tupe-description" class="panel-indent hidden">{{#t}}pages.tupe-transfer.tupe-description{{/t}}</p>
+</div>
+
+{{<partials-form}}
+
+{{$form}}
+{{#radio-group}}tupe-transfer{{/radio-group}}
+{{#input-submit}}next{{/input-submit}}
+{{/form}}
+
+{{/partials-form}}
+
+{{/content}}
+
+{{/layout}}

@@ -1,0 +1,47 @@
+{{<layout}}
+
+{{$journeyHeader}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/journeyHeader}}
+
+{{$title}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/title}}
+
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+{{<partials-form}}
+
+{{$form}}
+<fieldset id="tupe-transfer-date-group" class="{{#errors.tupe-transfer-date}}validation-error{{/errors.tupe-transfer-date}} form-group">
+    <legend>
+        <span>{{#t}}fields.tupe-transfer-date.legend{{/t}}</span>
+    </legend>
+    {{#errors.tupe-transfer-date}}
+                        <span id="tupe-transfer-date-error" class="error-message">
+                            {{errors.tupe-transfer-date.message}}
+                        </span>
+    {{/errors.tupe-transfer-date}}
+
+    <div class="form-group form-date">
+        {{#input-date}}tupe-transfer-date{{/input-date}}
+    </div>
+</fieldset>
+
+{{#input-submit}}next{{/input-submit}}
+
+{{/form}}
+{{/partials-form}}
+
+{{$back}}{{/back}}
+
+{{/content}}
+
+{{/layout}}

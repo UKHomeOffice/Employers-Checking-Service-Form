@@ -77,6 +77,28 @@
   "when-did-they-start-year": {
     "label": "Year"
   },
+  "tupe-transfer": {
+    "legend": "",
+    "label": "Does this person work for you as a result of a TUPE transfer?",
+    "yes": {
+      "label": "Yes"
+    },
+    "no": {
+      "label": "No"
+    }
+  },
+  "tupe-transfer-date": {
+    "legend": "What was the date of the TUPE transfer?"
+  },
+  "tupe-transfer-date-day": {
+    "label": "Day"
+  },
+  "tupe-transfer-date-month": {
+    "label": "Month"
+  },
+  "tupe-transfer-date-year": {
+    "label": "Year"
+  },
   "other-docs": {
     "legend": "Does this person have any one of the following?",
     "appeal-leave": {

@@ -44,5 +44,9 @@
   "insufficient-information":{
     "label": "You cannot request a Home Office right to work check",
     "legend": "Based on the information you have provided, you cannot request a Home Office right to work check for this person. <a href='https://www.gov.uk/government/collections/employers-illegal-working-penalties'>You can find further guidance on GOV.UK.</a>"
+  },
+  "tupe-transfer": {
+    "what-is-tupe": "What is a TUPE transfer?",
+    "tupe-description": "TUPE rules protect employees' rights when the organisation or service they work for is transferred to a new employer."
   }
 }

@@ -8,6 +8,8 @@ module.exports = _.extend(
     require('./employee-details'),
     require('./work-for-you'),
     require('./when-did-they-start'),
+    require('./tupe-transfer'),
+    require('./tupe-transfer-date'),
     require('./other-documents'),
     require('./employer-details'),
     require('./settlement-protection'),

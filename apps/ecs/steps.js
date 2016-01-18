@@ -44,6 +44,24 @@ module.exports = {
         next: '/other-documents',
         backLink: 'work-for-you'
     },
+    '/tupe-transfer':{
+        fields: [
+            'tupe-transfer',
+        ],
+        next: '/tupe-transfer-date',
+        bankLink: 'when-did-they-start'
+    },
+    '/tupe-transfer-date':{
+        controller: require('./controllers/tupe-transfer-date'),
+        fields: [
+            'tupe-transfer-date',
+            'tupe-transfer-date-day',
+            'tupe-transfer-date-month',
+            'tupe-transfer-date-year',
+        ],
+        next: '/other-documents',
+        bankLink: 'tupe-transfer'
+    },
     '/other-documents': {
         controller: require('./controllers/other-documents'),
         fields: [
