@@ -14,7 +14,7 @@ OriginalDocumentController.prototype.getNextStep = function getNextStep(req) {
     var next = BaseController.prototype.getNextStep.apply(this, arguments);
     var originalDocument = req.sessionModel.get('original-document');
     var otherDocsValue = req.sessionModel.get('other-docs');
-console.log('value is:::::'+ originalDocument);
+
     if (originalDocument === 'No') {
         next = 'must-seen-original-document';
     } else if (originalDocument === 'Yes') {

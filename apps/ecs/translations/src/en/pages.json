@@ -48,5 +48,13 @@
   "tupe-transfer": {
     "what-is-tupe": "What is a TUPE transfer?",
     "tupe-description": "TUPE rules protect employees' rights when the organisation or service they work for is transferred to a new employer."
+  },
+  "tupe-transfer-error":{
+    "label": "You do not need to request a Home Office right to work check",
+    "legend": "If the employee has been working for you as a result of a TUPE transfer, without a break in employment, from a date before 29 February 2008, then you do not need to request a right to work check. <a href='https://www.gov.uk/legal-right-work-uk'>Document checks should have been carried out when the person was recruited.</a>"
+  },
+  "not-tupe-transfer-error": {
+    "label": "You do not need to request a Home Office right to work check",
+    "legend": "If the employee has been working for you, without a break in employment, from a date before 29 February 2008, then you do not need to request a right to work check. <a href='https://www.gov.uk/legal-right-work-uk'>Document checks should have been carried out when the person was recruited.</a> This would have established you with a statutory defence from prosecution which you retain throughout the individual’s employment. Therefore no further checks are required provided that the employment has been continuous."
   }
 }

@@ -35,14 +35,17 @@ function getOtherDocsStep(next, otherDocsValue) {
 function getBackLink(req) {
     if(req.sessionModel.get('work-for-you') === 'No') {
 
-        /* Remove the when-did-they-start date if user has gone back */
-        if (!_.isUndefined(req.sessionModel.get('when-did-they-start'))) {
-            removeValueFromSession(req);
-        }
+        ///* Remove the when-did-they-start date if user has gone back */
+        //if (!_.isUndefined(req.sessionModel.get('when-did-they-start'))) {
+        //    removeValueFromSession(req);
+        //}
 
         return 'work-for-you';
 
     } else if (req.sessionModel.get('work-for-you') === 'Yes'){
+        if (!_.isUndefined(req.sessionModel.get('tupe-transfer-date'))) {
+            return "tupe-transfer-date"
+        }
         return 'when-did-they-start';
     }
 }

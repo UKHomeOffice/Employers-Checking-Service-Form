@@ -16,7 +16,7 @@ util.inherits(WhenDidTheyStartController, DateController);
 WhenDidTheyStartController.prototype.getNextStep = function getNextStep(req) {
     var startDate = getValue(req, 'when-did-they-start');
     var next;
-    if (moment(startDate, dateFormat).isAfter(moment('01-03-2008', dateFormat))) {
+    if (moment(startDate, dateFormat).isAfter(moment('29-02-2008', dateFormat))) {
         next = 'other-documents';
     } else {
         next = 'tupe-transfer';

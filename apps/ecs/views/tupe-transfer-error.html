@@ -1,0 +1,31 @@
+{{<layout}}
+
+{{$journeyHeader}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/journeyHeader}}
+
+{{$title}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/title}}
+
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+{{<partials-form}}
+{{$form}}
+<h3>{{#t}}pages.tupe-transfer-error.label{{/t}} </h3>
+<br/>
+<p>{{#t}}pages.tupe-transfer-error.legend{{/t}} </p>
+{{/form}}
+{{/partials-form}}
+
+{{/content}}
+
+{{/layout}}

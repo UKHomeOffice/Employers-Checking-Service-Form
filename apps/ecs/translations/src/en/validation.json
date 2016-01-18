@@ -57,7 +57,8 @@
     "required": "The TUPE date must be later than the date of recruitment.",
     "numeric": "Date must only contain numbers",
     "future": "The date is in the future",
-    "format": "Enter the date in the correct format"
+    "format": "Enter the date in the correct format",
+    "inValidDate": "The TUPE Transfer date must be later than the employee's date of recruitment."
   },
   "business-name":{
     "required": "Enter the business name"
@@ -85,7 +86,4 @@
   "ifb-ref-number":{
     "required": "Enter an IFB reference."
   }
-
-
-
 }

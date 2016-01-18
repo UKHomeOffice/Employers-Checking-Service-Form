@@ -49,7 +49,19 @@ module.exports = {
             'tupe-transfer',
         ],
         next: '/tupe-transfer-date',
+        forks: [
+            {
+                target: '/not-tupe-transfer-error',
+                condition: function checkForOptionN(req) {
+                    return req.form.values['tupe-transfer'] === "No";
+                }
+            },
+        ],
         bankLink: 'when-did-they-start'
+    },
+    '/not-tupe-transfer-error':{
+        prereqs:['/tupe-transfer'],
+        bankLink: 'tupe-transfer'
     },
     '/tupe-transfer-date':{
         controller: require('./controllers/tupe-transfer-date'),
@@ -59,16 +71,19 @@ module.exports = {
             'tupe-transfer-date-month',
             'tupe-transfer-date-year',
         ],
-        next: '/other-documents',
+        prereqs:['/other-documents','/tupe-transfer-error'],
         bankLink: 'tupe-transfer'
+    },
+    '/tupe-transfer-error':{
+        backLink: 'tupe-transfer-date'
     },
     '/other-documents': {
         controller: require('./controllers/other-documents'),
         fields: [
             'other-docs'
-        ],
-        prereqs:['/ongoing-application-id'],
-        backLink: 'work-for-you'
+        ]
+        //prereqs:['/ongoing-application-id'],
+        //backLinks: ['work-for-you','when-did-they-start','tupe-transfer-date']
     },
     '/original-document':{
         controller: require('./controllers/original-document'),
