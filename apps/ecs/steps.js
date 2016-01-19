@@ -41,7 +41,7 @@ module.exports = {
             'when-did-they-start-month',
             'when-did-they-start-year',
         ],
-        next: '/other-documents',
+        //next: '/other-documents',
         backLink: 'work-for-you'
     },
     '/tupe-transfer':{
@@ -57,11 +57,12 @@ module.exports = {
                 }
             },
         ],
-        bankLink: 'when-did-they-start'
+        backLink: 'when-did-they-start',
+
+
     },
     '/not-tupe-transfer-error':{
-        prereqs:['/tupe-transfer'],
-        bankLink: 'tupe-transfer'
+        backLink: 'tupe-transfer'
     },
     '/tupe-transfer-date':{
         controller: require('./controllers/tupe-transfer-date'),
@@ -72,7 +73,7 @@ module.exports = {
             'tupe-transfer-date-year',
         ],
         prereqs:['/other-documents','/tupe-transfer-error'],
-        bankLink: 'tupe-transfer'
+        backLink: 'tupe-transfer'
     },
     '/tupe-transfer-error':{
         backLink: 'tupe-transfer-date'
