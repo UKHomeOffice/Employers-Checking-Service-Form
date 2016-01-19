@@ -9,25 +9,14 @@ var i18nLookup = require('hof').i18nLookup;
 var fs = require('fs');
 var path = require('path');
 
-var customerHtmlTemplates = {
-  error: fs.readFileSync(
-    path.resolve(__dirname, './templates/customer/html/error.mus')).toString('utf8')
-
-};
-
-var customerPlainTextTemplates = {
-  error: fs.readFileSync(
-    path.resolve(__dirname, './templates/customer/plain/error.mus')).toString('utf8')
-};
-
 var caseworkerHtmlTemplates = {
   error: fs.readFileSync(
-    path.resolve(__dirname, './templates/caseworker/html/error.mus')).toString('utf8')
+    path.resolve(__dirname, './templates/caseworker/html/submit.mus')).toString('utf8')
 };
 
 var caseworkerPlainTextTemplates = {
   error: fs.readFileSync(
-    path.resolve(__dirname, './templates/caseworker/plain/error.mus')).toString('utf8')
+    path.resolve(__dirname, './templates/caseworker/plain/submit.mus')).toString('utf8')
 };
 
 var translationLocation = {
