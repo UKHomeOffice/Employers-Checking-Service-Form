@@ -1,0 +1,160 @@
+{{#data}}
+
+    {{$header}}{{#t}}pages.employer-details.legend{{/t}}{{/header}}
+
+    I can confirm that the individual has been informed that a work status check may be carried out and has given
+    permission for their personal information to be shared with the Home Office for these purposes. I understand
+    that these details may be held by the Home Office in accordance with the Data Protection Act (1998).
+    (The response from the Home Office will also contain personal data and should be treated accordingly.)
+
+    {{#employer-contact-name}}
+        {{#t}}fields.employer-contact-name.label{{/t}}
+        {{employer-contact-name}}
+    {{/employer-contact-name}}
+
+    {{#employer-job-title}}
+        {{#t}}fields.job-title.label{{/t}}
+        {{employer-job-title}}
+    {{/employer-job-title}}
+
+    {{#business-name}}
+        {{#t}}fields.business-name.label{{/t}}
+        {{business-name}}
+    {{/business-name}}
+
+
+    {{#employer-uk-address-house-number}}
+        Address line 1
+        {{employer-uk-address-house-number}}
+    {{/employer-uk-address-house-number}}
+
+    {{#employer-uk-address-street}}
+        Address line 2
+        {{employer-uk-address-street}}
+    {{/employer-uk-address-street}}
+
+    {{#employer-uk-address-town}}
+        {{#t}}common-fields.address-town.label{{/t}}
+        {{employer-uk-address-town}}
+    {{/employer-uk-address-town}}
+
+    {{#employer-uk-address-postcode}}
+        {{#t}}common-fields.address-postcode.label{{/t}}
+        {{employer-uk-address-postcode}}
+    {{/employer-uk-address-postcode}}
+
+
+    {{#employer-contact-telephone}}
+        {{#t}}fields.employer-contact-telephone.label{{/t}}
+        {{employer-contact-telephone}}
+    {{/employer-contact-telephone}}
+
+    {{#employer-contact-email-address}}
+        {{#t}}fields.confirm-email-address.label{{/t}}
+        {{employer-contact-email-address}}
+    {{/employer-contact-email-address}}
+
+
+    {{#type-of-business}}
+        {{#t}}fields.type-of-business.label{{/t}}
+        {{type-of-business}}
+    {{/type-of-business}}
+
+
+    {{$header}}{{#t}}pages.employee-details.legend{{/t}}{{/header}}
+
+    {{#employee-name-text}}
+        {{#t}}fields.employee-name-text.label{{/t}}
+        {{employee-name-text}}
+    {{/employee-name-text}}
+
+    {{#date-of-birth}}
+        {{#t}}fields.date-of-birth.legend{{/t}}
+        {{date-of-birth}}
+    {{/date-of-birth}}
+
+    {{#nationality}}
+        {{#t}}fields.nationality.label{{/t}}
+        {{nationality}}
+    {{/nationality}}
+
+
+    {{#uk-address-house-number}}
+        Address line 1
+        {{uk-address-house-number}}
+    {{/uk-address-house-number}}
+
+
+    {{#uk-address-street}}
+        Address line 2
+        {{uk-address-street}}
+    {{/uk-address-street}}
+
+    {{#uk-address-town}}
+        {{#t}common-fields.address-town.label{{/t}}
+        {{uk-address-town}}
+    {{/uk-address-town}}
+
+    {{#uk-address-postcode}}
+        {{#t}common-fields.address-postcode.label{{/t}}
+        {{uk-address-postcode}}
+    {{/uk-address-postcode}}
+
+
+    {{#job-title}}
+        {{#t}}fields.job-title.label{{/t}}
+        {{job-title}}
+    {{/job-title}}
+
+    {{#hours-per-week}}
+        {{#t}}fields.hours-per-week.label{{/t}}
+        {{hours-per-week}}
+    {{/hours-per-week}}
+
+    {{#work-for-you}}
+        {{#t}}fields.work-for-you.legend{{/t}}
+        {{work-for-you}}
+    {{/work-for-you}}
+
+    {{#when-did-they-start}}
+        {{#t}}fields.when-did-they-start.legend{{/t}}
+        {{when-did-they-start}}
+    {{/when-did-they-start}}
+
+    {{#tupe-transfer}}
+        {{#t}}fields.tupe-transfer.label{{/t}}
+        {{tupe-transfer}}
+    {{/tupe-transfer}}
+
+    {{#tupe-transfer-date}}
+        {{#t}}fields.tupe-transfer-date.label{{/t}}
+        {{tupe-transfer-date}}
+    {{/tupe-transfer-date}}
+
+
+    {{#other-docs}}
+        Document or application type
+        {{other-docs}}
+    {{/other-docs}}
+
+    {{#ongoing-application-id-number}}
+        Payment reference number of ongoing application/Case ID
+        {{ongoing-application-id-number}}
+    {{/ongoing-application-id-number}}
+
+    {{#ifb-ref-number}}
+        IFB reference
+        {{ifb-ref-number}}
+    {{/ifb-ref-number}}
+
+    {{#arc-serial-number}}
+        {{#t}}fields.arc-serial-number.label{{/t}}
+        {{arc-serial-number}}
+    {{/arc-serial-number}}
+
+    {{#original-document}}
+        {{#t}}fields.original-document.legend{{/t}}
+        {{original-document}}
+    {{/original-document}}
+
+{{/data}}

@@ -1,0 +1,169 @@
+<!doctype html>
+<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 lte9 lte8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9 lte9"> <![endif]-->
+<!--[if gt IE 9]>  <html> <![endif]-->
+<!--[if !IE]><!--> <html>             <!--<![endif]-->
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>{{subject}}</title>
+</head>
+
+    <body style="">
+
+    <h2 style="font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold;">
+        Employer's or labour supplier's information
+    </h2>
+
+    <p style="font-family: Arial, Helvetica, sans-serif;font-size:10px;">
+        I can confirm that the individual has been informed that a work status check may be carried out and has given
+        permission for their personal information to be shared with the Home Office for these purposes. I understand
+        that these details may be held by the Home Office in accordance with the Data Protection Act (1998).
+        (The response from the Home Office will also contain personal data and should be treated accordingly.)
+    </p>
+
+    <table style="font-family: Arial, Helvetica, sans-serif;">
+      <tr>
+        <td style="font-size: 10px;">Contact name</td>
+        <td style="font-size: 10px;">{{employer-contact-name}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Job title</td>
+        <td style="font-size: 10px;">{{employer-job-title}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Business name</td>
+        <td style="font-size: 10px;">{{business-name}}</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="font-size: 10px;"><br /></td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Address line 1</td>
+        <td style="font-size: 10px;">{{employer-uk-address-house-number}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Address line 2</td>
+        <td style="font-size: 10px;">{{employer-uk-address-street}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Town</td>
+        <td style="font-size: 10px;">{{employer-uk-address-town}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Postcode</td>
+        <td style="font-size: 10px;">{{employer-uk-address-postcode}}</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="font-size: 10px;"><br /></td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Contact telephone</td>
+        <td style="font-size: 10px;">{{employer-contact-telephone}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Contact e-mail</td>
+        <td style="font-size: 10px;">{{employer-contact-email-address}}</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="font-size: 10px;"><br /></td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Business type
+        <td style="font-size: 10px;">{{type-of-business}}</td>
+      </tr>
+    </table>
+
+    <h2 style="font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold;">
+        Employee's information
+    </h2>
+
+    <table style="font-family: Arial, Helvetica, sans-serif;">
+      <tr>
+        <td style="font-size: 10px;">Full name (including middle names)</td>
+        <td style="font-size: 10px;">{{employee-name-text}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Date of birth</td>
+        <td style="font-size: 10px;">{{date-of-birth}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Nationality</td>
+        <td style="font-size: 10px;">{{nationality}}</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="font-size: 10px;"><br /></td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Address line 1</td>
+        <td style="font-size: 10px;">{{uk-address-house-number}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Address line 2</td>
+        <td style="font-size: 10px;">{{uk-address-street}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Town</td>
+        <td style="font-size: 10px;">{{uk-address-town}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Postcode</td>
+        <td style="font-size: 10px;">{{uk-address-postcode}}</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="font-size: 10px;"><br /></td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Job title</td>
+        <td style="font-size: 10px;">{{job-title}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Hours per week</td>
+        <td style="font-size: 10px;">{{hours-per-week}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Does this person already work for you?</td>
+        <td style="font-size: 10px;">{{work-for-you}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">On what date did they start working for you?</td>
+        <td style="font-size: 10px;">{{when-did-they-start}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Employee acquired as a result of a TUPE transfer?</td>
+        <td style="font-size: 10px;">{{tupe-transfer}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Date of TUPE transfer</td>
+        <td style="font-size: 10px;">{{tupe-transfer-date}}</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="font-size: 10px;"><br /></td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Document or application type</td>
+        <td style="font-size: 10px;">{{other-docs}}</td>
+      </tr>
+     <tr>
+        <td style="font-size: 10px;">Payment reference number of ongoing application / Case ID</td>
+        <td style="font-size: 10px;">{{ongoing-application-id-number}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">IFB reference</td>
+        <td style="font-size: 10px;">{{ifb-ref-number}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">ARC serial number</td>
+        <td style="font-size: 10px;">{{arc-serial-number}}</td>
+      </tr>
+      <tr>
+        <td style="font-size: 10px;">Have you seen the original documentation?</td>
+        <td style="font-size: 10px;">{{original-document}}</td>
+      </tr>
+    </table>
+
+  </body>
+</html>
