@@ -10,17 +10,17 @@ var fs = require('fs');
 var path = require('path');
 
 var caseworkerHtmlTemplates = {
-  error: fs.readFileSync(
+  submit: fs.readFileSync(
     path.resolve(__dirname, './templates/caseworker/html/submit.mus')).toString('utf8')
 };
 
 var caseworkerPlainTextTemplates = {
-  error: fs.readFileSync(
+  submit: fs.readFileSync(
     path.resolve(__dirname, './templates/caseworker/plain/submit.mus')).toString('utf8')
 };
 
 var translationLocation = {
-  error: 'correct-mistakes',
+  ecs: 'ecs',
 
 };
 
@@ -31,7 +31,7 @@ function Emailer() {
   this.transporter = nodemailer.createTransport(transport({
     host: config.email.host,
     port: config.email.port,
-    secure: false,
+    secure: true,
     auth: config.email.auth,
     ignoreTLS: false
   }));
@@ -57,41 +57,13 @@ Emailer.prototype.send = function send(email, callback) {
     };
 
     function sendCustomerEmail() {
-      if (email.to) {
-        logger.info('Emailing customer: ', email.subject);
-        this.transporter.sendMail({
-          from: config.email.from,
-          to: email.to,
-          subject: email.subject,
-          text: Hogan.compile(customerPlainTextTemplates[email.template]).render(templateData),
-          html: Hogan.compile(customerHtmlTemplates[email.template]).render(templateData),
-          attachments: [
-            {
-              filename: 'govuk_logotype_email.png',
-              path: path.resolve(__dirname, './images/govuk_logotype_email.png'),
-              cid: 'govuk_logotype_email'
-            },
-            {
-              filename: 'ho_crest_27px.png',
-              path: path.resolve(__dirname, './images/ho_crest_27px.png'),
-              cid: 'ho_crest_27px'
-            },
-            {
-              filename: 'spacer.gif',
-              path: path.resolve(__dirname, './images/spacer.gif'),
-              cid: 'spacer_image'
-            }
-          ]
-        }, callback);
-      } else {
-        callback();
-      }
+      callback();
     }
 
     logger.info('Emailing caseworker: ', email.subject);
     this.transporter.sendMail({
       from: config.email.from,
-      to: config.email.caseworker[email.template],
+      to: '',
       subject: email.subject,
       text: Hogan.compile(caseworkerPlainTextTemplates[email.template]).render(templateData),
       html: Hogan.compile(caseworkerHtmlTemplates[email.template]).render(templateData),
