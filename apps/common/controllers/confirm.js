@@ -25,7 +25,7 @@ ConfirmController.prototype.saveValues = function saveValues(req, res, callback)
             var model = new Model(d);
             var service = {
                 template: 'submit',
-                subject: 'something'
+                subject: 'ECS Application'
             };
 
             if (service) {
