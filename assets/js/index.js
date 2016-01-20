@@ -72,6 +72,12 @@ if ($('#what-is-tupe').length) {
   });
 }
 
+/* Settlement protection link */
+if ($('#settlement-protection-group').length) {
+  var settlementLink = "<a href='https://www.gov.uk/settlement-refugee-or-humanitarian-protection'>settlement protection?</a>";
+  $("#settlement-protection-group > legend > span").append(settlementLink);
+}
+
 /* Show error on first page ECS */
 if ($('#eea-passport-error').length) {
  $('#eea-passport-group').removeClass('hiddenLegend');

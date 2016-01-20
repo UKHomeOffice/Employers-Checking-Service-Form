@@ -14,7 +14,7 @@
     "label":" "
   },
   "settlement-protection": {
-    "legend": "Has this person made an application for, or do they qualify for, <a href='https://www.gov.uk/settlement-refugee-or-humanitarian-protection'> settlement protection? </a>",
+    "legend": "Has this person made an application for, or do they qualify for, ",
     "yes": {
       "label": "Yes"
     },
