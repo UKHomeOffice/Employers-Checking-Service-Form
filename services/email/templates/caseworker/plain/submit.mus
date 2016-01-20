@@ -91,12 +91,12 @@
     {{/uk-address-street}}
 
     {{#uk-address-town}}
-        {{#t}common-fields.address-town.label{{/t}}
+        {{#t}}common-fields.address-town.label{{/t}}
         {{uk-address-town}}
     {{/uk-address-town}}
 
     {{#uk-address-postcode}}
-        {{#t}common-fields.address-postcode.label{{/t}}
+        {{#t}}common-fields.address-postcode.label{{/t}}
         {{uk-address-postcode}}
     {{/uk-address-postcode}}
 

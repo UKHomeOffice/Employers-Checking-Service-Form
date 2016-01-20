@@ -25,6 +25,8 @@
         (The response from the Home Office will also contain personal data and should be treated accordingly.)
     </p>
 
+    {{#data}}
+
     <table style="font-family: Arial, Helvetica, sans-serif;">
       <tr>
         <td style="font-size: 10px;">Contact name</td>
@@ -164,6 +166,8 @@
         <td style="font-size: 10px;">{{original-document}}</td>
       </tr>
     </table>
+
+    {{/data}}
 
   </body>
 </html>
