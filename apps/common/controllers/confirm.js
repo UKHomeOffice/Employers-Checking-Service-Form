@@ -4,11 +4,12 @@ var util = require('util');
 var _ = require('underscore');
 
 var BaseController = require('../../../lib/base-controller');
-var Model = require('../models/email');
+//var Model = require('../models/email');
 
 var ErrorClass = require('../../../lib/base-error');
 
 var ConfirmController = function ConfirmController() {
+  this.dateKey = 'declaration_confirmation';
   BaseController.apply(this, arguments);
 };
 
@@ -44,6 +45,7 @@ var serviceMap = {
 
 //ConfirmController.prototype.saveValues = function saveValues(req, res, callback) {
 //
+//  console.log("ConfirmController.prototype.saveValues called");
 //  //BaseController.prototype.saveValues.call(this, req, res, function saveModel() {
 //  //  var data = _.pick(req.sessionModel.toJSON(), _.identity);
 //  //  var model = new Model(data);
@@ -63,9 +65,7 @@ var serviceMap = {
 
 ConfirmController.prototype.validateField = function validateField(key, req) {
   var dataProtectionCheckBox = getValue(req, 'declaration_confirmation');
-  Console.log('dataProtectionCheckBox::::========='+dataProtectionCheckBox);
-
-  if (dataProtectionCheckBox === "UnChecked") {
+  if (dataProtectionCheckBox !== "on") {
     return new ErrorClass('declaration_confirmation', {
       key: 'declaration_confirmation',
       type: 'select',
@@ -76,8 +76,10 @@ ConfirmController.prototype.validateField = function validateField(key, req) {
 };
 
 function getValue(req, key) {
-  if (req.form && req.form.values) {
-    return req.form.values[key];
+  if (req.form){
+    if(req.form.values) {
+      return req.form.values[key];
+    }
   }
 }
 

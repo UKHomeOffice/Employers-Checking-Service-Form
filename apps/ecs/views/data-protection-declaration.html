@@ -7,6 +7,9 @@
 {{$header}}
 {{/header}}
 
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
 
 {{$content}}
 <h2>{{#t}}pages.data-protection-declaration.title{{/t}}</h2>
@@ -35,10 +38,22 @@
 
 {{$form}}
 
-<div class="block-label">
-    <input type="checkbox" name="declaration_confirmation" id="declaration_confirmation" tabindex="0">
-    <label for="declaration_confirmation">{{#t}}fields.declaration_confirmation.label{{/t}}</label>
-</div>
+
+<fieldset id="declaration_confirmation-group" class="{{#errors.declaration_confirmation}}validation-error{{/errors.declaration_confirmation}} form-group">
+
+    {{#errors.declaration_confirmation}}
+            <span id="declaration_confirmation-error" class="error-message">
+              {{errors.declaration_confirmation.message}} Some more text
+            </span>
+    {{/errors.declaration_confirmation}}
+
+
+    <div class="block-label">
+        <input type="checkbox" name="declaration_confirmation" id="declaration_confirmation" tabindex="0">
+        <label for="declaration_confirmation">{{#t}}fields.declaration_confirmation.label{{/t}}</label>
+    </div>
+
+</fieldset>
 
 <br/>
 

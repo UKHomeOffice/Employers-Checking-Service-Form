@@ -185,6 +185,9 @@ module.exports = {
         next: '/data-protection-declaration'
     },
     '/data-protection-declaration':{
+        fields:[
+            'declaration_confirmation'
+        ],
         controller: require('../common/controllers/confirm'),
         next: '/confirmation',
         backLink: 'confirm'
