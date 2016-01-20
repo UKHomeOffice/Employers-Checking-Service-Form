@@ -85,5 +85,8 @@
   },
   "ifb-ref-number":{
     "required": "Enter an IFB reference."
+  },
+  "declaration_confirmation":{
+    "select" : "Please ensure you have agreed to the declaration before continuing."
   }
 }

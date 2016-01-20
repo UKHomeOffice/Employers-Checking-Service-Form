@@ -1,0 +1,53 @@
+{{<layout}}
+
+{{$title}}
+{{#t}}pages.data-protection-declaration.title{{/t}}
+{{/title}}
+
+{{$header}}
+{{/header}}
+
+
+{{$content}}
+<h2>{{#t}}pages.data-protection-declaration.title{{/t}}</h2>
+<p>{{#t}}pages.data-protection-declaration.confirm-statement{{/t}}</p>
+
+<ul class="list-bullet">
+    <li>{{#t}}pages.data-protection-declaration.confirm-statement-list1{{/t}}</li>
+    <li>{{#t}}pages.data-protection-declaration.confirm-statement-list2{{/t}}</li>
+</ul>
+
+<p>{{#t}}pages.data-protection-declaration.understand-statement{{/t}}</p>
+<ul class="list-bullet">
+    <li>{{#t}}pages.data-protection-declaration.understand-statement-list1{{/t}}</li>
+    <li>{{#t}}pages.data-protection-declaration.understand-statement-list2{{/t}}</li>
+</ul>
+
+<h2>{{#t}}pages.data-protection-declaration.privacy-policy{{/t}}</h2>
+
+<p>{{#t}}pages.data-protection-declaration.privacy-policy-content1{{/t}}</p>
+
+<br/>
+
+<p>{{#t}}pages.data-protection-declaration.privacy-policy-content2{{/t}}</p>
+
+{{<partials-form}}
+
+{{$form}}
+
+<div class="block-label">
+    <input type="checkbox" name="declaration_confirmation" id="declaration_confirmation" tabindex="0">
+    <label for="declaration_confirmation">{{#t}}fields.declaration_confirmation.label{{/t}}</label>
+</div>
+
+<br/>
+
+{{#input-submit}}send{{/input-submit}}
+
+{{/form}}
+
+{{/partials-form}}
+
+{{/content}}
+
+{{/layout}}

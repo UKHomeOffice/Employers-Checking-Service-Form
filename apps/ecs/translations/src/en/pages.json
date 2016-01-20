@@ -59,8 +59,20 @@
   },
   "confirmation": {
     "heading": "Thank you for submitting information to the Home Office",
-    "description" : "A message confirming these details has been sent to the email address you provided. We aim to respond within five working days. You need to wait for our response before taking any further action.",
+    "description": "A message confirming these details has been sent to the email address you provided. We aim to respond within five working days. You need to wait for our response before taking any further action.",
     "return": "Return to the gov.uk homepage",
     "feedback": "Tell us what you think of this form"
+  },
+  "data-protection-declaration":{
+    "title": "Data protection statement",
+    "confirm-statement": "I confirm that the employee or prospective employee:",
+    "confirm-statement-list1": "has been told that a right to work check will be carried out on them",
+    "confirm-statement-list2": "has been given permission for their information to be shared with the Home Office",
+    "understand-statement": "I understand that:",
+    "understand-statement-list1": "these details will be processed by the Home Office in accordance with its privacy policy (below) and the Data Protection Act 1998",
+    "understand-statement-list2": "the response from the Home Office will also contain personal data and should be treated accordingly",
+    "privacy-policy": "Privacy Policy",
+    "privacy-policy-content1": "The personal information entered on this form will be used to carry out a Home Office right to work check. It may also be used to support the work of the Home Office and to prevent and detect fraud. The Home Office is the data controller in relation to the information provided, which will be processed in accordance with the Data Protection Act 1998",
+    "privacy-policy-content2": "The Home Office will send responses only to the email address that the employer entered on the form for security reasons. You can read more about how the Home Office uses <a href='https://www.gov.uk/government/organisations/home-office/about/personal-information-charter'>personal data.</a>"
   }
 }

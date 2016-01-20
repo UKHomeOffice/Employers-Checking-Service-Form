@@ -176,5 +176,8 @@
     },
     "arc-serial-number":{
       "label":"ARC serial number"
-    }
+    },
+  "declaration_confirmation": {
+    "label": "I confirm that I have read, understood and complied with the above."
+  }
 }

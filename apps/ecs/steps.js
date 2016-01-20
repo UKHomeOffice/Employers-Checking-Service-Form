@@ -177,17 +177,21 @@ module.exports = {
             'employer-contact-email-address',
             'employer-confirm-email-address'
         ],
-        backList: 'employee-details',
+        backLink: 'employee-details',
         next: '/confirm'
     },
     '/confirm':{
-        controller: require('../common/controllers/confirm'),
         backLink: 'employer-details',
-        next: '/confirmation'
+        next: '/data-protection-declaration'
+    },
+    '/data-protection-declaration':{
+        controller: require('../common/controllers/confirm'),
+        next: '/confirmation',
+        backLink: 'confirm'
     },
     '/confirmation': {
         controller: require('../common/controllers/confirmation'),
-        backLink: false
+        backLink: 'data-protection-declaration'
     }
 
 }
