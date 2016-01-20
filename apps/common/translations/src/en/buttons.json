@@ -3,5 +3,6 @@
   "send": "Send",
   "change": "Change",
   "close": "Close",
-  "next": "Next"
+  "next": "Next",
+  "another-request": "Request another check"
 }

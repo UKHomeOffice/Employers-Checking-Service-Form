@@ -56,5 +56,11 @@
   "not-tupe-transfer-error": {
     "label": "You do not need to request a Home Office right to work check",
     "legend": "If the employee has been working for you, without a break in employment, from a date before 29 February 2008, then you do not need to request a right to work check. <a href='https://www.gov.uk/legal-right-work-uk'>Document checks should have been carried out when the person was recruited.</a> This would have established you with a statutory defence from prosecution which you retain throughout the individual’s employment. Therefore no further checks are required provided that the employment has been continuous."
+  },
+  "confirmation": {
+    "heading": "Thank you for submitting information to the Home Office",
+    "description" : "A message confirming these details has been sent to the email address you provided. We aim to respond within five working days. You need to wait for our response before taking any further action.",
+    "return": "Return to the gov.uk homepage",
+    "feedback": "Tell us what you think of this form"
   }
 }
