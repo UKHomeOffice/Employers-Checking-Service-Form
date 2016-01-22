@@ -1,4 +1,4 @@
-#BRP Acceptance Tests
+#ECS Acceptance Tests
 
 The tests follow the standard principles of feature files and step definitions.
 
@@ -35,7 +35,11 @@ cucumber features/example.feature
 
 You can also run/install the tests from the root of the project using npm
 ```
-npm run test:acceptance
+bundle install
+```
+
+```
+npm install -g phantomjs
 ```
 
 ##Yard:
