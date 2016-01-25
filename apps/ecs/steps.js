@@ -1,36 +1,40 @@
 'use strict';
 
+var moment = require('moment');
+
 module.exports = {
     '/': {
         template: 'ecs-application.html',
         fields: [
             'eea-passport'
         ],
-        next: '/check-not-needed',
+        next: '/work-for-you',
         forks: [
             {
                 target: '/check-not-needed',
                 condition: function checkForOptionY(req) {
                     return req.form.values['eea-passport'] === "Yes";
                 }
-            },
-            {
-                target: '/work-for-you',
-                condition: function checkForOptionN(req) {
-                    return req.form.values['eea-passport'] === "No";
-                }
-            },
+            }
         ]
     },
     '/check-not-needed': {
+        prereqs: ['/ecs-application'],
         backLink: '/ecs-application'
     },
     '/work-for-you': {
-        controller: require('./controllers/work-for-you'),
         fields: [
             'work-for-you'
         ],
         next: '/other-documents',
+        forks: [
+            {
+                target: '/when-did-they-start',
+                condition: function checkForOptionY(req) {
+                    return req.form.values['work-for-you'] === "Yes";
+                }
+            }
+        ],
         backLink: '/ecs-application'
     },
     '/when-did-they-start': {
@@ -41,7 +45,8 @@ module.exports = {
             'when-did-they-start-month',
             'when-did-they-start-year',
         ],
-        //next: '/other-documents',
+        next: '/other-documents',
+        prereqs: ['/work-for-you'],
         backLink: 'work-for-you'
     },
     '/tupe-transfer':{
@@ -57,11 +62,10 @@ module.exports = {
                 }
             },
         ],
-        backLink: 'when-did-they-start',
-
-
+        backLink: 'when-did-they-start'
     },
     '/not-tupe-transfer-error':{
+        prereqs: ['/tupe-transfer'],
         backLink: 'tupe-transfer'
     },
     '/tupe-transfer-date':{
@@ -72,27 +76,76 @@ module.exports = {
             'tupe-transfer-date-month',
             'tupe-transfer-date-year',
         ],
-        prereqs:['/other-documents','/tupe-transfer-error'],
+        forks: [
+            {
+                target: '/tupe-transfer-error',
+                condition: function afterDate(req) {
+                    var a = moment(req.form.values['tupe-transfer-date'], 'DD-MM-YYYY');
+                    console.log(a);
+                    var b = moment('01-03-2008', 'DD-MM-YYYY');
+                    console.log(b);
+                    return a.isBefore(b);
+                }
+            }
+        ],
+        next: '/other-documents',
+        prereqs: ['/tupe-transfer-error'],
         backLink: 'tupe-transfer'
     },
     '/tupe-transfer-error':{
+        prereqs: ['/tupe-transfer-date'],
         backLink: 'tupe-transfer-date'
     },
     '/other-documents': {
-        controller: require('./controllers/other-documents'),
         fields: [
             'other-docs'
-        ]
-        //prereqs:['/ongoing-application-id'],
-        //backLinks: ['work-for-you','when-did-they-start','tupe-transfer-date']
+        ],
+        next: '/settlement-protection',
+        forks: [
+            {
+                target: '/ongoing-application-id',
+                condition: function checkForOptionA(req) {
+                    return req.form.values['other-docs'] === "appeal-leave" ||
+                        req.form.values['other-docs'] === "no-time" ||
+                        req.form.values['other-docs'] === "transfer-visa" ||
+                        req.form.values['other-docs'] === "brp-replace";
+                }
+            },
+            {
+                target: '/original-document',
+                condition: function checkForOptionB(req) {
+                    return req.form.values['other-docs'] === "application-cert" ||
+                        req.form.values['other-docs'] === "app-reg-card";
+                }
+            }
+        ],
+        backLinks: ['work-for-you', 'tupe-transfer-date', 'when-did-they-start'],
     },
     '/original-document':{
-        controller: require('./controllers/original-document'),
         fields: [
             'original-document'
         ],
-        backLink: 'other-documents'
+        next: '/must-seen-original-document',
+        forks: [
+            {
+                target: '/arc-card-details',
+                condition: function docAndARC(req) {
+                    return req.form.values['original-document'] === "Yes"
+                        && req.sessionModel.get('other-docs') === "app-reg-card";
+                }
+            },
+            {
+                target: '/ongoing-application-id',
+                condition: function docAndOngoingApp(req) {
+                    return req.form.values['original-document'] === "Yes"
+                        && req.sessionModel.get('other-docs') !== "app-reg-card";
+                }
+            }
+        ],
+        prereqs: ['/other-documents'],
+        backLinks: ['other-documents']
     },
+    //BackLink not working
     '/must-seen-original-document':{
         backLink: 'original-document'
     },
@@ -108,38 +161,34 @@ module.exports = {
         fields: [
             'settlement-protection'
         ],
-        backLink: 'other-documents',
         next: '/conduct-right-work',
         forks: [
-            {
-                target: '/conduct-right-work',
-                condition: function checkForOptionY(req) {
-                    return req.form.values['settlement-protection'] === "Yes";
-                }
-            },
             {
                 target: '/insufficient-information',
                 condition: function checkForOptionN(req) {
                     return req.form.values['settlement-protection'] === "No";
                 }
             },
-        ]
+        ],
+        prereqs: ['/other-documents'],
+        backLink: 'other-documents',
     },
     '/insufficient-information':{
-        prereqs:['/settlement-protection'],
-        backLink: 'settlement-protection'
+        prereqs: ['/settlement-protection'],
+        backLinks: ['settlement-protection']
     },
     '/ongoing-application-id': {
         fields: [
             'ongoing-application-id-number'
         ],
         next: '/conduct-right-work',
-        backLink: 'other-documents'
+        prereqs: ['/other-documents', '/original-document'],
+        backLinks: ['other-documents', 'original-document']
     },
     '/conduct-right-work':{
         next: '/employee-details',
+        prereqs : ['/arc-card-details','/settlement-protection','/ongoing-application-id'],
         backLinks:['arc-card-details','settlement-protection','ongoing-application-id']
-
     },
     '/employee-details': {
         controller: require('../common/controllers/personal-details'),
@@ -196,5 +245,4 @@ module.exports = {
         controller: require('../common/controllers/confirmation'),
         backLink: 'data-protection-declaration'
     }
-
 }
