@@ -17,7 +17,7 @@ module.exports = {
             {
                 target: '/check-not-needed',
                 condition: function checkForOptionY(req) {
-                    return req.form.values['eea-passport'] === "Yes";
+                    return req.form.values['eea-passport'] === 'Yes';
                 }
             }
         ]
@@ -72,19 +72,19 @@ module.exports = {
             {
                 target: '/not-tupe-transfer-error',
                 condition: function checkForOptionN(req) {
-                    return req.form.values['tupe-transfer'] === "No";
+                    return req.form.values['tupe-transfer'] === 'No';
                 }
             },
         ],
         backLink: 'when-did-they-start',
         prereqs: ['/when-did-they-start', '/not-tupe-transfer-error', '/tupe-transfer-error', '/tupe-transfer-date']
     },
-    '/not-tupe-transfer-error':{
+    '/not-tupe-transfer-error': {
         prereqs: ['/tupe-transfer'],
         backLink: 'tupe-transfer',
         clearSession: false
     },
-    '/tupe-transfer-date':{
+    '/tupe-transfer-date': {
         controller: require('./controllers/tupe-transfer-date'),
         fields: [
             'tupe-transfer-date',
@@ -103,10 +103,10 @@ module.exports = {
             }
         ],
         next: '/other-documents',
-        prereqs: ['/tupe-transfer-error'],
+        prereqs: ['/tupe-transfer'],
         backLink: 'tupe-transfer'
     },
-    '/tupe-transfer-error':{
+    '/tupe-transfer-error': {
         prereqs: ['/tupe-transfer-date'],
         backLink: 'tupe-transfer-date',
         clearSession: false
@@ -120,23 +120,23 @@ module.exports = {
             {
                 target: '/ongoing-application-id',
                 condition: function checkForOptionA(req) {
-                    return req.form.values['other-docs'] === "appeal-leave" ||
-                        req.form.values['other-docs'] === "no-time" ||
-                        req.form.values['other-docs'] === "transfer-visa" ||
-                        req.form.values['other-docs'] === "brp-replace";
+                    return req.form.values['other-docs'] === 'appeal-leave' ||
+                        req.form.values['other-docs'] === 'no-time' ||
+                        req.form.values['other-docs'] === 'transfer-visa' ||
+                        req.form.values['other-docs'] === 'brp-replace';
                 }
             },
             {
                 target: '/original-document',
                 condition: function checkForOptionB(req) {
-                    return req.form.values['other-docs'] === "application-cert" ||
-                        req.form.values['other-docs'] === "app-reg-card";
+                    return req.form.values['other-docs'] === 'application-cert' ||
+                        req.form.values['other-docs'] === 'app-reg-card';
                 }
             }
         ],
         backLinks: ['work-for-you', 'tupe-transfer-date', 'when-did-they-start'],
     },
-    '/original-document':{
+    '/original-document': {
         fields: [
             'original-document'
         ],
@@ -145,26 +145,25 @@ module.exports = {
             {
                 target: '/arc-card-details',
                 condition: function docAndARC(req) {
-                    return req.form.values['original-document'] === "Yes"
-                        && req.sessionModel.get('other-docs') === "app-reg-card";
+                    return req.form.values['original-document'] === 'Yes'
+                        && req.sessionModel.get('other-docs') === 'app-reg-card';
                 }
             },
             {
                 target: '/ongoing-application-id',
                 condition: function docAndOngoingApp(req) {
-                    return req.form.values['original-document'] === "Yes"
-                        && req.sessionModel.get('other-docs') !== "app-reg-card";
+                    return req.form.values['original-document'] === 'Yes'
+                        && req.sessionModel.get('other-docs') !== 'app-reg-card';
                 }
             }
         ],
         prereqs: ['/other-documents'],
         backLinks: ['other-documents']
     },
-    //BackLink not working
-    '/must-seen-original-document':{
+    '/must-seen-original-document': {
         backLink: 'original-document'
     },
-    '/arc-card-details':{
+    '/arc-card-details': {
         fields: [
             'arc-serial-number',
             'ifb-ref-number'
@@ -172,7 +171,7 @@ module.exports = {
         backLink: 'original-document',
         next: '/conduct-right-work',
     },
-    '/settlement-protection':{
+    '/settlement-protection': {
         fields: [
             'settlement-protection'
         ],
@@ -181,14 +180,14 @@ module.exports = {
             {
                 target: '/insufficient-information',
                 condition: function checkForOptionN(req) {
-                    return req.form.values['settlement-protection'] === "No";
+                    return req.form.values['settlement-protection'] === 'No';
                 }
             },
         ],
         prereqs: ['/other-documents'],
         backLink: 'other-documents',
     },
-    '/insufficient-information':{
+    '/insufficient-information': {
         prereqs: ['/settlement-protection'],
         backLinks: ['settlement-protection']
     },
@@ -200,10 +199,10 @@ module.exports = {
         prereqs: ['/other-documents', '/original-document'],
         backLinks: ['other-documents', 'original-document']
     },
-    '/conduct-right-work':{
+    '/conduct-right-work': {
         next: '/employee-details',
-        prereqs : ['/arc-card-details','/settlement-protection','/ongoing-application-id'],
-        backLinks:['arc-card-details','settlement-protection','ongoing-application-id']
+        prereqs: ['/arc-card-details', '/settlement-protection', '/ongoing-application-id'],
+        backLinks: ['arc-card-details', 'settlement-protection', 'ongoing-application-id']
     },
     '/employee-details': {
         controller: require('../common/controllers/personal-details'),
@@ -225,9 +224,9 @@ module.exports = {
         backLink: 'conduct-right-work',
         next: '/employer-details'
     },
-    '/employer-details':{
+    '/employer-details': {
         controller: require('./controllers/employer-details'),
-        fields:[
+        fields: [
             'business-name',
             'type-of-business',
             'employer-uk-address-house-number',
@@ -244,12 +243,12 @@ module.exports = {
         backLink: 'employee-details',
         next: '/confirm'
     },
-    '/confirm':{
+    '/confirm': {
         backLink: 'employer-details',
         next: '/data-protection-declaration'
     },
-    '/data-protection-declaration':{
-        fields:[
+    '/data-protection-declaration': {
+        fields: [
             'declaration_confirmation'
         ],
         controller: require('../common/controllers/confirm'),
@@ -260,4 +259,4 @@ module.exports = {
         controller: require('../common/controllers/confirmation'),
         backLink: 'data-protection-declaration'
     }
-}
+};
