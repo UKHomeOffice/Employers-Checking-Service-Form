@@ -13,18 +13,6 @@ var TupeTransferDateController = function TupeTransferDateController() {
 };
 
 util.inherits(TupeTransferDateController, DateController);
-//
-//TupeTransferDateController.prototype.getNextStep = function getNextStep(req) {
-//    var tupeTransferDate = getValue(req, 'tupe-transfer-date');
-//    var next;
-//    if (moment(tupeTransferDate, dateFormat).isAfter(moment('29-02-2008', dateFormat))) {
-//        next = 'other-documents';
-//    } else {
-//        next = 'tupe-transfer-error';
-//    }
-//    this.options.next = next;
-//    return next;
-//};
 
 TupeTransferDateController.prototype.validateField = function validateField(key, req) {
     var employeeStartDate = req.sessionModel.get('when-did-they-start');

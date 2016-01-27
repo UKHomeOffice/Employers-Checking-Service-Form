@@ -81,9 +81,7 @@ module.exports = {
                 target: '/tupe-transfer-error',
                 condition: function afterDate(req) {
                     var a = moment(req.form.values['tupe-transfer-date'], 'DD-MM-YYYY');
-                    console.log(a);
                     var b = moment('01-03-2008', 'DD-MM-YYYY');
-                    console.log(b);
                     return a.isBefore(b);
                 }
             }
