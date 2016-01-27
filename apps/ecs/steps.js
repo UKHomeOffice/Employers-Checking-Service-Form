@@ -4,6 +4,10 @@ var moment = require('moment');
 
 module.exports = {
     '/': {
+        controller: require('../common/controllers/start'),
+        next: '/employee-checking-service'
+    },
+    '/employee-checking-service': {
         template: 'ecs-application.html',
         fields: [
             'eea-passport'
@@ -19,8 +23,8 @@ module.exports = {
         ]
     },
     '/check-not-needed': {
-        prereqs: ['/ecs-application'],
-        backLink: '/ecs-application'
+        prereqs: ['/employee-checking-service'],
+        backLink: 'employee-checking-service'
     },
     '/work-for-you': {
         fields: [
@@ -35,7 +39,7 @@ module.exports = {
                 }
             }
         ],
-        backLink: '/ecs-application'
+        backLink: 'employee-checking-service'
     },
     '/when-did-they-start': {
         controller: require('./controllers/when-did-they-start'),
@@ -72,11 +76,13 @@ module.exports = {
                 }
             },
         ],
-        backLink: 'when-did-they-start'
+        backLink: 'when-did-they-start',
+        prereqs: ['/when-did-they-start', '/not-tupe-transfer-error', '/tupe-transfer-error', '/tupe-transfer-date']
     },
     '/not-tupe-transfer-error':{
         prereqs: ['/tupe-transfer'],
-        backLink: 'tupe-transfer'
+        backLink: 'tupe-transfer',
+        clearSession: false
     },
     '/tupe-transfer-date':{
         controller: require('./controllers/tupe-transfer-date'),
@@ -102,7 +108,8 @@ module.exports = {
     },
     '/tupe-transfer-error':{
         prereqs: ['/tupe-transfer-date'],
-        backLink: 'tupe-transfer-date'
+        backLink: 'tupe-transfer-date',
+        clearSession: false
     },
     '/other-documents': {
         fields: [
