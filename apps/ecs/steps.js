@@ -31,7 +31,7 @@ module.exports = {
             {
                 target: '/when-did-they-start',
                 condition: function checkForOptionY(req) {
-                    return req.form.values['work-for-you'] === "Yes";
+                    return req.form.values['work-for-you'] === 'Yes';
                 }
             }
         ],
@@ -46,10 +46,20 @@ module.exports = {
             'when-did-they-start-year',
         ],
         next: '/other-documents',
+        forks: [
+            {
+                target: '/tupe-transfer',
+                condition: function afterDate(req) {
+                    var a = moment(req.form.values['when-did-they-start'], 'DD-MM-YYYY');
+                    var b = moment('01-03-2008', 'DD-MM-YYYY');
+                    return a.isBefore(b);
+                }
+            }
+        ],
         prereqs: ['/work-for-you'],
         backLink: 'work-for-you'
     },
-    '/tupe-transfer':{
+    '/tupe-transfer': {
         fields: [
             'tupe-transfer',
         ],
