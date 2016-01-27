@@ -14,6 +14,12 @@ var TupeTransferDateController = function TupeTransferDateController() {
 
 util.inherits(TupeTransferDateController, DateController);
 
+function getValue(req, key) {
+    if (req.form && req.form.values) {
+        return req.form.values[key];
+    }
+}
+
 TupeTransferDateController.prototype.validateField = function validateField(key, req) {
     var employeeStartDate = req.sessionModel.get('when-did-they-start');
     var tupeTransferDate = getValue(req, 'tupe-transfer-date');
@@ -27,11 +33,5 @@ TupeTransferDateController.prototype.validateField = function validateField(key,
     }
     return DateController.prototype.validateField.apply(this, arguments);
 };
-
-function getValue(req, key) {
-    if (req.form && req.form.values) {
-        return req.form.values[key];
-    }
-}
 
 module.exports = TupeTransferDateController;
