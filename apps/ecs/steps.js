@@ -42,7 +42,6 @@ module.exports = {
         backLink: 'employee-checking-service'
     },
     '/when-did-they-start': {
-        controller: require('./controllers/when-did-they-start'),
         fields: [
             'when-did-they-start',
             'when-did-they-start-day',
@@ -53,8 +52,11 @@ module.exports = {
         forks: [
             {
                 target: '/tupe-transfer',
-                condition: function afterDate(req) {
-                    var a = moment(req.form.values['when-did-they-start'], 'DD-MM-YYYY');
+                condition: function startDate(req) {
+                    var day = req.form.values['when-did-they-start-day'];
+                    var month = req.form.values['when-did-they-start-month'];
+                    var year = req.form.values['when-did-they-start-year'];
+                    var a = moment(day + '-' + month + '-' + year, 'DD-MM-YYYY');
                     var b = moment('01-03-2008', 'DD-MM-YYYY');
                     return a.isBefore(b);
                 }
