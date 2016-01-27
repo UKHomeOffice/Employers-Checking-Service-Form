@@ -1,50 +1,71 @@
 'use strict';
 
+var moment = require('moment');
+
 module.exports = {
     '/': {
+        controller: require('../common/controllers/start'),
+        next: '/employee-checking-service'
+    },
+    '/employee-checking-service': {
         template: 'ecs-application.html',
         fields: [
             'eea-passport'
         ],
-        next: '/check-not-needed',
+        next: '/work-for-you',
         forks: [
             {
                 target: '/check-not-needed',
                 condition: function checkForOptionY(req) {
-                    return req.form.values['eea-passport'] === "Yes";
+                    return req.form.values['eea-passport'] === 'Yes';
                 }
-            },
-            {
-                target: '/work-for-you',
-                condition: function checkForOptionN(req) {
-                    return req.form.values['eea-passport'] === "No";
-                }
-            },
+            }
         ]
     },
     '/check-not-needed': {
-        backLink: '/ecs-application'
+        prereqs: ['/employee-checking-service'],
+        backLink: 'employee-checking-service'
     },
     '/work-for-you': {
-        controller: require('./controllers/work-for-you'),
         fields: [
             'work-for-you'
         ],
         next: '/other-documents',
-        backLink: '/ecs-application'
+        forks: [
+            {
+                target: '/when-did-they-start',
+                condition: function checkForOptionY(req) {
+                    return req.form.values['work-for-you'] === 'Yes';
+                }
+            }
+        ],
+        backLink: 'employee-checking-service'
     },
     '/when-did-they-start': {
-        controller: require('./controllers/when-did-they-start'),
         fields: [
             'when-did-they-start',
             'when-did-they-start-day',
             'when-did-they-start-month',
             'when-did-they-start-year',
         ],
-        //next: '/other-documents',
+        next: '/other-documents',
+        forks: [
+            {
+                target: '/tupe-transfer',
+                condition: function startDate(req) {
+                    var day = req.form.values['when-did-they-start-day'];
+                    var month = req.form.values['when-did-they-start-month'];
+                    var year = req.form.values['when-did-they-start-year'];
+                    var a = moment(day + '-' + month + '-' + year, 'DD-MM-YYYY');
+                    var b = moment('01-03-2008', 'DD-MM-YYYY');
+                    return a.isBefore(b);
+                }
+            }
+        ],
+        prereqs: ['/work-for-you'],
         backLink: 'work-for-you'
     },
-    '/tupe-transfer':{
+    '/tupe-transfer': {
         fields: [
             'tupe-transfer',
         ],
@@ -53,18 +74,19 @@ module.exports = {
             {
                 target: '/not-tupe-transfer-error',
                 condition: function checkForOptionN(req) {
-                    return req.form.values['tupe-transfer'] === "No";
+                    return req.form.values['tupe-transfer'] === 'No';
                 }
             },
         ],
         backLink: 'when-did-they-start',
-
-
+        prereqs: ['/when-did-they-start', '/not-tupe-transfer-error', '/tupe-transfer-error', '/tupe-transfer-date']
     },
-    '/not-tupe-transfer-error':{
-        backLink: 'tupe-transfer'
+    '/not-tupe-transfer-error': {
+        prereqs: ['/tupe-transfer'],
+        backLink: 'tupe-transfer',
+        clearSession: false
     },
-    '/tupe-transfer-date':{
+    '/tupe-transfer-date': {
         controller: require('./controllers/tupe-transfer-date'),
         fields: [
             'tupe-transfer-date',
@@ -72,31 +94,78 @@ module.exports = {
             'tupe-transfer-date-month',
             'tupe-transfer-date-year',
         ],
-        prereqs:['/other-documents','/tupe-transfer-error'],
+        forks: [
+            {
+                target: '/tupe-transfer-error',
+                condition: function afterDate(req) {
+                    var a = moment(req.form.values['tupe-transfer-date'], 'DD-MM-YYYY');
+                    var b = moment('01-03-2008', 'DD-MM-YYYY');
+                    return a.isBefore(b);
+                }
+            }
+        ],
+        next: '/other-documents',
+        prereqs: ['/tupe-transfer'],
         backLink: 'tupe-transfer'
     },
-    '/tupe-transfer-error':{
-        backLink: 'tupe-transfer-date'
+    '/tupe-transfer-error': {
+        prereqs: ['/tupe-transfer-date'],
+        backLink: 'tupe-transfer-date',
+        clearSession: false
     },
     '/other-documents': {
-        controller: require('./controllers/other-documents'),
         fields: [
             'other-docs'
-        ]
-        //prereqs:['/ongoing-application-id'],
-        //backLinks: ['work-for-you','when-did-they-start','tupe-transfer-date']
+        ],
+        next: '/settlement-protection',
+        forks: [
+            {
+                target: '/ongoing-application-id',
+                condition: function checkForOptionA(req) {
+                    return req.form.values['other-docs'] === 'appeal-leave' ||
+                        req.form.values['other-docs'] === 'no-time' ||
+                        req.form.values['other-docs'] === 'transfer-visa' ||
+                        req.form.values['other-docs'] === 'brp-replace';
+                }
+            },
+            {
+                target: '/original-document',
+                condition: function checkForOptionB(req) {
+                    return req.form.values['other-docs'] === 'application-cert' ||
+                        req.form.values['other-docs'] === 'app-reg-card';
+                }
+            }
+        ],
+        backLinks: ['work-for-you', 'tupe-transfer-date', 'when-did-they-start'],
     },
-    '/original-document':{
-        controller: require('./controllers/original-document'),
+    '/original-document': {
         fields: [
             'original-document'
         ],
-        backLink: 'other-documents'
+        next: '/must-seen-original-document',
+        forks: [
+            {
+                target: '/arc-card-details',
+                condition: function docAndARC(req) {
+                    return req.form.values['original-document'] === 'Yes'
+                        && req.sessionModel.get('other-docs') === 'app-reg-card';
+                }
+            },
+            {
+                target: '/ongoing-application-id',
+                condition: function docAndOngoingApp(req) {
+                    return req.form.values['original-document'] === 'Yes'
+                        && req.sessionModel.get('other-docs') !== 'app-reg-card';
+                }
+            }
+        ],
+        prereqs: ['/other-documents'],
+        backLinks: ['other-documents']
     },
-    '/must-seen-original-document':{
+    '/must-seen-original-document': {
         backLink: 'original-document'
     },
-    '/arc-card-details':{
+    '/arc-card-details': {
         fields: [
             'arc-serial-number',
             'ifb-ref-number'
@@ -104,42 +173,38 @@ module.exports = {
         backLink: 'original-document',
         next: '/conduct-right-work',
     },
-    '/settlement-protection':{
+    '/settlement-protection': {
         fields: [
             'settlement-protection'
         ],
-        backLink: 'other-documents',
         next: '/conduct-right-work',
         forks: [
             {
-                target: '/conduct-right-work',
-                condition: function checkForOptionY(req) {
-                    return req.form.values['settlement-protection'] === "Yes";
-                }
-            },
-            {
                 target: '/insufficient-information',
                 condition: function checkForOptionN(req) {
-                    return req.form.values['settlement-protection'] === "No";
+                    return req.form.values['settlement-protection'] === 'No';
                 }
             },
-        ]
+        ],
+        prereqs: ['/other-documents'],
+        backLink: 'other-documents',
     },
-    '/insufficient-information':{
-        prereqs:['/settlement-protection'],
-        backLink: 'settlement-protection'
+    '/insufficient-information': {
+        prereqs: ['/settlement-protection'],
+        backLinks: ['settlement-protection']
     },
     '/ongoing-application-id': {
         fields: [
             'ongoing-application-id-number'
         ],
         next: '/conduct-right-work',
-        backLink: 'other-documents'
+        prereqs: ['/other-documents', '/original-document'],
+        backLinks: ['other-documents', 'original-document']
     },
-    '/conduct-right-work':{
+    '/conduct-right-work': {
         next: '/employee-details',
-        backLinks:['arc-card-details','settlement-protection','ongoing-application-id']
-
+        prereqs: ['/arc-card-details', '/settlement-protection', '/ongoing-application-id'],
+        backLinks: ['arc-card-details', 'settlement-protection', 'ongoing-application-id']
     },
     '/employee-details': {
         controller: require('../common/controllers/personal-details'),
@@ -161,9 +226,9 @@ module.exports = {
         backLink: 'conduct-right-work',
         next: '/employer-details'
     },
-    '/employer-details':{
+    '/employer-details': {
         controller: require('./controllers/employer-details'),
-        fields:[
+        fields: [
             'business-name',
             'type-of-business',
             'employer-uk-address-house-number',
@@ -180,12 +245,12 @@ module.exports = {
         backLink: 'employee-details',
         next: '/confirm'
     },
-    '/confirm':{
+    '/confirm': {
         backLink: 'employer-details',
         next: '/data-protection-declaration'
     },
-    '/data-protection-declaration':{
-        fields:[
+    '/data-protection-declaration': {
+        fields: [
             'declaration_confirmation'
         ],
         controller: require('../common/controllers/confirm'),
@@ -196,5 +261,4 @@ module.exports = {
         controller: require('../common/controllers/confirmation'),
         backLink: 'data-protection-declaration'
     }
-
-}
+};

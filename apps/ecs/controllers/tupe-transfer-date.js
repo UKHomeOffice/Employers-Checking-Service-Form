@@ -1,7 +1,7 @@
 'use strict';
 
 var util = require('util');
-var DateController = require('../../../lib/date-controller');
+var DateController = require('hof').controllers.date;
 var ErrorClass = require('../../../lib/base-error');
 
 var moment = require('moment');
@@ -14,17 +14,11 @@ var TupeTransferDateController = function TupeTransferDateController() {
 
 util.inherits(TupeTransferDateController, DateController);
 
-TupeTransferDateController.prototype.getNextStep = function getNextStep(req) {
-    var tupeTransferDate = getValue(req, 'tupe-transfer-date');
-    var next;
-    if (moment(tupeTransferDate, dateFormat).isAfter(moment('29-02-2008', dateFormat))) {
-        next = 'other-documents';
-    } else {
-        next = 'tupe-transfer-error';
+function getValue(req, key) {
+    if (req.form && req.form.values) {
+        return req.form.values[key];
     }
-    this.options.next = next;
-    return next;
-};
+}
 
 TupeTransferDateController.prototype.validateField = function validateField(key, req) {
     var employeeStartDate = req.sessionModel.get('when-did-they-start');
@@ -39,11 +33,5 @@ TupeTransferDateController.prototype.validateField = function validateField(key,
     }
     return DateController.prototype.validateField.apply(this, arguments);
 };
-
-function getValue(req, key) {
-    if (req.form && req.form.values) {
-        return req.form.values[key];
-    }
-}
 
 module.exports = TupeTransferDateController;

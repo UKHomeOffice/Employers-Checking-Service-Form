@@ -15,6 +15,14 @@ var ConfirmController = function ConfirmController() {
 
 util.inherits(ConfirmController, BaseController);
 
+function getValue(req, key) {
+  if (req.form) {
+    if (req.form.values) {
+      return req.form.values[key];
+    }
+  }
+}
+
 ConfirmController.prototype.saveValues = function saveValues(req, res, callback) {
     var data = _.pick(req.sessionModel.toJSON(), _.identity);
     var dataArray = [];
@@ -39,11 +47,11 @@ ConfirmController.prototype.saveValues = function saveValues(req, res, callback)
 
         });
     }
-}
+};
 
 ConfirmController.prototype.validateField = function validateField(key, req) {
   var dataProtectionCheckBox = getValue(req, 'declaration_confirmation');
-  if (dataProtectionCheckBox !== "on") {
+  if (dataProtectionCheckBox !== 'on') {
     return new ErrorClass('declaration_confirmation', {
       key: 'declaration_confirmation',
       type: 'select',
@@ -52,13 +60,5 @@ ConfirmController.prototype.validateField = function validateField(key, req) {
   }
   return BaseController.prototype.validateField.apply(this, arguments);
 };
-
-function getValue(req, key) {
-  if (req.form){
-    if(req.form.values) {
-      return req.form.values[key];
-    }
-  }
-}
 
 module.exports = ConfirmController;

@@ -45,7 +45,6 @@ app.use(function setBaseUrl(req, res, next) {
 var client = redis.createClient(config.redis.port, config.redis.host);
 
 client.on('error', function clientErrorHandler(e) {
-  console.log(e.fullStackTrace);
   throw e;
 });
 

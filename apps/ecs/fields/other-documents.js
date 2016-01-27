@@ -4,9 +4,10 @@ module.exports = {
     'other-docs': {
         validate: 'required',
         legend: 'fields.other-docs.legend',
-        options: [{
-            value: 'appeal-leave',
-            label: 'fields.other-docs.appeal-leave.label'
+        options: [
+            {
+                value: 'appeal-leave',
+                label: 'fields.other-docs.appeal-leave.label'
             },
             {
                 value: 'no-time',
@@ -31,6 +32,7 @@ module.exports = {
             {
                 value: 'none-above',
                 label: 'fields.other-docs.none-above.label'
-            }]
+            }
+        ]
     }
 };

@@ -39,13 +39,13 @@ module.exports = {
         label: 'common-fields.address-county.label'
     },
     'uk-address-postcode': {
-        validate: ['required','postcode'],
+        validate: ['required', 'postcode'],
         label: 'common-fields.address-postcode.label'
     },
-    'job-title':{
+    'job-title': {
         validate: ['required']
     },
     'hours-per-week': {
         validate: ['required']
     }
-}
+};

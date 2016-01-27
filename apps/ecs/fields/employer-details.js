@@ -5,7 +5,7 @@ module.exports = {
         validate: ['required'],
         label: 'fields.business-name.label'
     },
-    'type-of-business':{
+    'type-of-business': {
         validate: ['required'],
         label: 'fields.type-of-business.label'
     },
@@ -24,14 +24,14 @@ module.exports = {
         label: 'common-fields.address-county.label'
     },
     'employer-uk-address-postcode': {
-        validate: ['required','postcode'],
+        validate: ['required', 'postcode'],
         label: 'common-fields.address-postcode.label'
     },
-    'employer-contact-name':{
+    'employer-contact-name': {
         validate: ['required'],
         label: 'fields.employer-contact-name.label'
     },
-    'employer-job-title':{
+    'employer-job-title': {
         validate: ['required'],
         label: 'fields.job-title.label'
     },
@@ -39,12 +39,12 @@ module.exports = {
         validate: ['required', 'numeric'],
         label: 'fields.employer-contact-telephone.label'
     },
-    'employer-contact-email-address':{
-        validate: ['required','email'],
+    'employer-contact-email-address': {
+        validate: ['required', 'email'],
         label: 'fields.employer-contact-email-address.label'
     },
-    'employer-confirm-email-address':{
-        validate: ['required','email'],
+    'employer-confirm-email-address': {
+        validate: ['required', 'email'],
         label: 'fields.employer-confirm-email-address.label'
     }
-}
+};

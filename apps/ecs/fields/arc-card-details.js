@@ -7,4 +7,4 @@ module.exports = {
     'arc-serial-number': {
         validate: 'required'
     }
-}
+};

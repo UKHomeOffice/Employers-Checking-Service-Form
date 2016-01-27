@@ -39,13 +39,29 @@
         <td><a href="work-for-you" class="button">{{#t}}buttons.change{{/t}}</a></td>
     </tr>
 
-    {{#values.when-did-they-start}}
+    {{#values.when-did-they-start-day}}
     <tr>
         <td>{{#t}}fields.when-did-they-start.legend{{/t}}</td>
-        <td>{{values.when-did-they-start-formatted}}</td>
-        <td><a href="when-did-they-start/edit#" class="button">{{#t}}buttons.change{{/t}}</a></td>
+        <td>{{values.when-did-they-start-day}}-{{values.when-did-they-start-month}}-{{values.when-did-they-start-year}}</td>
+        <td><a href="when-did-they-start" class="button">{{#t}}buttons.change{{/t}}</a></td>
     </tr>
-    {{/values.when-did-they-start}}
+    {{/values.when-did-they-start-day}}
+
+    {{#values.tupe-transfer}}
+    <tr>
+        <td>{{#t}}fields.tupe-transfer.label{{/t}}</td>
+        <td>{{values.tupe-transfer}}</td>
+        <td><a href="tupe-transfer" class="button">{{#t}}buttons.change{{/t}}</a></td>
+    </tr>
+    {{/values.tupe-transfer}}
+
+    {{#values.tupe-transfer-date}}
+    <tr>
+        <td>{{#t}}fields.tupe-transfer-date.legend{{/t}}</td>
+        <td>{{values.tupe-transfer-date}}</td>
+        <td><a href="tupe-transfer-date/edit#" class="button">{{#t}}buttons.change{{/t}}</a></td>
+    </tr>
+    {{/values.tupe-transfer-date}}
 
     <tr>
         <td>{{#t}}fields.other-docs.legend{{/t}}</td>
@@ -185,7 +201,7 @@
 
     {{#values.employer-job-title}}
     <tr>
-        <td>{{#t}}fields.employer-job-title.label{{/t}}</td>
+        <td>{{#t}}fields.job-title.label{{/t}}</td>
         <td>{{values.employer-job-title}}</td>
         <td><a href="employer-details/edit#employer-job-title" class="button">{{#t}}buttons.change{{/t}}</a></td>
     </tr>
