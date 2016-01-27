@@ -1,5 +1,5 @@
 Given(/^I am on the start page for the form$/) do
-  visit config['ecs-host']
+  visit config['ecs-application']
 end
 
 Then(/^I see the (.*) question$/) do | question |
