@@ -1,15 +1,20 @@
 {{<layout}}
 
-{{$title}}
-{{#t}}pages.data-protection-declaration.title{{/t}}
-{{/title}}
+{{$journeyHeader}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/journeyHeader}}
 
-{{$header}}
-{{/header}}
+{{$title}}
+{{#t}}journeys.ecs.header{{/t}}
+{{/title}}
 
 {{$validationSummary}}
 {{> partials-validation-summary}}
 {{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
 
 {{$content}}
 <h2>{{#t}}pages.data-protection-declaration.title{{/t}}</h2>
