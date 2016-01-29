@@ -1,7 +1,7 @@
 {{<layout}}
 
 {{$journeyHeader}}
-{{#t}}journeys.lost.header{{/t}}
+{{#t}}journeys.ecs.header{{/t}}
 {{/journeyHeader}}
 
 {{$validationSummary}}
@@ -178,7 +178,7 @@
         <td><a href="employer-details/edit#type-of-business" class="button">{{#t}}buttons.change{{/t}}</a></td>
     </tr>
 
-    {{#values.employer-uk-address-street}}
+    {{#values.employer-uk-address-house-number}}
     <tr>
         <td>{{#t}}fields.business-address.label{{/t}}</td>
         <td>
@@ -187,9 +187,9 @@
             {{#values.employer-uk-address-county}}{{values.employer-uk-address-county}},</br> {{/values.employer-uk-address-county}}
             {{values.employer-uk-address-postcode}}
         </td>
-        <td><a href="contact-details/edit#employer-uk-address-group" class="button">{{#t}}buttons.change{{/t}}</a></td>
+        <td><a href="employer-details/edit#employer-uk-address-group" class="button">{{#t}}buttons.change{{/t}}</a></td>
     </tr>
-    {{/values.employer-uk-address-street}}
+    {{/values.employer-uk-address-house-number}}
 
     {{#values.employer-contact-name}}
     <tr>
