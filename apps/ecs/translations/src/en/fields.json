@@ -14,7 +14,7 @@
     "label":" "
   },
   "settlement-protection": {
-    "legend": "Has this person made an application for, or do they qualify for, ",
+    "legend": "Has this person made an application for, or do they qualify for, settlement protection?",
     "yes": {
       "label": "Yes"
     },

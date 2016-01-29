@@ -74,8 +74,13 @@ if ($('#what-is-tupe').length) {
 
 /* Settlement protection link */
 if ($('#settlement-protection-group').length) {
-  var settlementLink = "<a href='https://www.gov.uk/settlement-refugee-or-humanitarian-protection'>settlement protection?</a>";
-  $("#settlement-protection-group > legend > span").append(settlementLink);
+  var settlementText = 'Has this person made an application for, or do they qualify for, ';
+  var settlementLink = "<span>" +
+                              settlementText +
+                              "<a href='https://www.gov.uk/settlement-refugee-or-humanitarian-protection'>settlement protection?</a>"
+                          "</span>";
+  $("#settlement-protection-group > legend").empty();
+  $("#settlement-protection-group > legend").append(settlementLink);
 }
 
 /* Show error on first page ECS */
