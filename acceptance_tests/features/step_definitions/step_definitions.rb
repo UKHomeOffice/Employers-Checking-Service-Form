@@ -77,7 +77,7 @@ When(/^I enter the employer's details$/) do
   step 'I enter business_city into the business_city_text field'
   step 'I enter business_postcode into the business_postcode_text field'
   step 'I enter full_name into the employers_name_text field'
-  step 'I enter jobtitle into the employers_job_text field'
+  step 'I enter employer_job_title into the employers_job_text field'
   step 'I enter contact_telephone into the employers_number_text field'
   step 'I enter contact_email into the employers_email_text field'
   step 'I enter contact_email into the employers_confirm_email_text field'
@@ -95,8 +95,66 @@ Then(/^I should see the headers and my information in the summary:$/) do | table
   end
 end
 
+Then(/^I should not see the tupe headers in the summary$/) do
+    step 'I expect to not see tupe_transfer'
+    step 'I expect to not see tupe_transfer_date'
+end
+
+Then(/^I should not see when did they start or tupe headers in the summary$/) do
+  step 'I expect to not see when_did_they_start'
+  step 'I expect to not see tupe_transfer'
+  step 'I expect to not see tupe_transfer_date'
+end
+
+Then(/^I should not see original-docs or arc headers in the summary$/) do
+  step 'I expect to not see arc_serial_numnber'
+  step 'I expect to not see ifb_number'
+  step 'I expect to not see original_document'
+end
+
+Then(/^I should not see original-docs header in the summary$/) do
+  step 'I expect to not see original_document'
+end
+
+Then(/^I should not see settlement protection header in the summary$/) do
+  step 'I expect to not see settlement_protection'
+end
+
+Then(/^I should not see case id header in the summary$/) do
+  step 'I expect to not see ongoing_app'
+end
+
+Then(/^I expect to not see (.*)$/) do | content |
+  expect(page).to have_no_content CONTENT[content]
+end
+
 When(/^I click work for you change button$/) do
   find(:xpath, "//*[@id='form-details']/tbody/tr[1]/td[3]/a").click
+end
+
+When(/^I click when did they start change button$/) do
+  find(:xpath, "//*[@id='form-details']/tbody/tr[2]/td[3]/a").click
+end
+
+When(/^I click other-docs change button$/) do
+  find(:xpath, "//*[@id='form-details']/tbody/tr[2]/td[3]/a").click
+end
+
+When(/^I click employer's email change button$/) do
+  find(:xpath, "//*[@id='employer-details']/tbody/tr[7]/td[3]/a").click
+end
+
+When(/^I click employee's hours per week change button$/) do
+  find(:xpath, "//*[@id='employee-details']/tbody/tr[6]/td[3]/a").click
+end
+
+Then(/^I change the employer's email address$/) do
+  step 'I enter new_contact_email into the employers_email_text field'
+  step 'I enter new_contact_email into the employers_confirm_email_text field'
+end
+
+Then(/^I change the employee's hours per week$/) do
+  step 'I enter new_hours into the hours_per_week field'
 end
 
 Given /^I wait for (\d+) seconds?$/ do |n|
