@@ -31,6 +31,10 @@ And(/^I click send$/) do
   click_button("Send")
 end
 
+And(/^I click back/) do
+  find(:xpath, "//*[@id='step']/a").click
+end
+
 When(/^I enter (.*) into the (.*) and continue$/) do | text, field |
   step "I enter #{text} into the #{field} field"
   step 'I click next'
