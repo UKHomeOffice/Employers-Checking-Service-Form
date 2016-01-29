@@ -27,6 +27,7 @@ module.exports = {
         backLink: 'employee-checking-service'
     },
     '/work-for-you': {
+        controller: require('./controllers/work-for-you'),
         fields: [
             'work-for-you'
         ],
@@ -42,6 +43,7 @@ module.exports = {
         backLink: 'employee-checking-service'
     },
     '/when-did-they-start': {
+        controller: require('./controllers/when-did-they-start'),
         fields: [
             'when-did-they-start',
             'when-did-they-start-day',
@@ -166,6 +168,7 @@ module.exports = {
         backLink: 'original-document'
     },
     '/arc-card-details': {
+        controller: require('./controllers/arc-card-details'),
         fields: [
             'arc-serial-number',
             'ifb-ref-number'
@@ -174,6 +177,7 @@ module.exports = {
         next: '/conduct-right-work',
     },
     '/settlement-protection': {
+        controller: require('./controllers/settlement-protection'),
         fields: [
             'settlement-protection'
         ],
@@ -194,6 +198,7 @@ module.exports = {
         backLinks: ['settlement-protection']
     },
     '/ongoing-application-id': {
+        controller: require('./controllers/ongoing-application-id'),
         fields: [
             'ongoing-application-id-number'
         ],
