@@ -165,7 +165,8 @@ module.exports = {
         backLinks: ['other-documents']
     },
     '/must-seen-original-document': {
-        backLink: 'original-document'
+        backLink: 'original-document',
+        clearSession: false
     },
     '/arc-card-details': {
         controller: require('./controllers/arc-card-details'),
@@ -195,7 +196,8 @@ module.exports = {
     },
     '/insufficient-information': {
         prereqs: ['/settlement-protection'],
-        backLinks: ['settlement-protection']
+        backLinks: ['settlement-protection'],
+        clearSession: false
     },
     '/ongoing-application-id': {
         controller: require('./controllers/ongoing-application-id'),
