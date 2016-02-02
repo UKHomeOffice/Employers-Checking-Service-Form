@@ -141,6 +141,7 @@ module.exports = {
         backLinks: ['work-for-you', 'tupe-transfer-date', 'when-did-they-start'],
     },
     '/original-document': {
+        controller: require('./controllers/original-document'),
         fields: [
             'original-document'
         ],
@@ -266,6 +267,6 @@ module.exports = {
     },
     '/confirmation': {
         controller: require('../common/controllers/confirmation'),
-        backLink: 'data-protection-declaration'
+        backLink: false
     }
 };
