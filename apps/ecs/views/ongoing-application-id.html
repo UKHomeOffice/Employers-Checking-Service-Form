@@ -1,36 +1,37 @@
 {{<layout}}
 
-{{$journeyHeader}}
-{{#t}}journeys.ecs.header{{/t}}
-{{/journeyHeader}}
+    {{$journeyHeader}}
+        {{#t}}journeys.ecs.header{{/t}}
+    {{/journeyHeader}}
 
-{{$title}}
-{{#t}}journeys.ecs.header{{/t}}
-{{/title}}
+    {{$title}}
+        {{#t}}journeys.ecs.header{{/t}}
+    {{/title}}
 
-{{$validationSummary}}
-{{> partials-validation-summary}}
-{{/validationSummary}}
+    {{$validationSummary}}
+        {{> partials-validation-summary}}
+    {{/validationSummary}}
 
-{{$propositionHeader}}
-{{> partials-navigation}}
-{{/propositionHeader}}
+    {{$propositionHeader}}
+        {{> partials-navigation}}
+    {{/propositionHeader}}
 
-{{$content}}
+    {{$content}}
 
-{{<partials-form}}
+        {{<partials-form}}
 
-{{$form}}
-<div> </div>
-<h3>{{#t}}fields.ongoing-application-id-number.labelText{{/t}} </h3>
+            {{$form}}
+                <h3>{{#t}}fields.ongoing-application-id-number.labelText{{/t}} </h3>
 
- {{#input-text}}ongoing-application-id-number{{/input-text}}
+                {{#input-text}}ongoing-application-id-number{{/input-text}}
 
-{{#input-submit}}next{{/input-submit}}
-{{/form}}
+                {{#input-submit}}next{{/input-submit}}
+            {{/form}}
 
-{{/partials-form}}
+        {{/partials-form}}
 
-{{/content}}
+    {{$back}}{{/back}}
+
+    {{/content}}
 
 {{/layout}}

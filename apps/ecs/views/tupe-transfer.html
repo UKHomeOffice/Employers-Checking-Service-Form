@@ -1,39 +1,46 @@
 {{<layout}}
 
-{{$journeyHeader}}
-{{#t}}journeys.ecs.header{{/t}}
-{{/journeyHeader}}
+    {{$journeyHeader}}
+        {{#t}}journeys.ecs.header{{/t}}
+    {{/journeyHeader}}
 
-{{$title}}
-{{#t}}journeys.ecs.header{{/t}}
-{{/title}}
+    {{$title}}
+        {{#t}}journeys.ecs.header{{/t}}
+    {{/title}}
 
-{{$validationSummary}}
-{{> partials-validation-summary}}
-{{/validationSummary}}
+    {{$validationSummary}}
+        {{> partials-validation-summary}}
+    {{/validationSummary}}
 
-{{$propositionHeader}}
-{{> partials-navigation}}
-{{/propositionHeader}}
+    {{$propositionHeader}}
+        {{> partials-navigation}}
+    {{/propositionHeader}}
 
-{{$content}}
+    {{$content}}
 
-<h1>{{#t}}fields.tupe-transfer.label{{/t}}</h1>
+        <h1>{{#t}}fields.tupe-transfer.label{{/t}}</h1>
 
-<div>
-    <summary id="what-is-tupe">{{#t}}pages.tupe-transfer.what-is-tupe{{/t}}</summary>
-    <p id="tupe-description" class="panel-indent hidden">{{#t}}pages.tupe-transfer.tupe-description{{/t}}</p>
-</div>
+        <div>
+            <summary id="what-is-tupe">{{#t}}pages.tupe-transfer.what-is-tupe{{/t}}</summary>
+            <p id="tupe-description" class="panel-indent hidden">{{#t}}pages.tupe-transfer.tupe-description{{/t}}</p>
+        </div>
 
-{{<partials-form}}
+        {{<partials-form}}
 
-{{$form}}
-{{#radio-group}}tupe-transfer{{/radio-group}}
-{{#input-submit}}next{{/input-submit}}
-{{/form}}
+        {{$form}}
+            {{#errors.tupe-transfer}}
+                <span id="tupe-transfer-error" class="error-message">
+                    {{errors.tupe-transfer.message}}
+                </span>
+            {{/errors.tupe-transfer}}
+            {{#radio-group}}tupe-transfer{{/radio-group}}
+            {{#input-submit}}next{{/input-submit}}
+        {{/form}}
 
-{{/partials-form}}
+        {{/partials-form}}
 
-{{/content}}
+        {{$back}}{{/back}}
+
+    {{/content}}
 
 {{/layout}}

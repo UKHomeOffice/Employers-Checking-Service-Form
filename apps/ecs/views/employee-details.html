@@ -1,75 +1,64 @@
 {{<layout}}
 
-{{$journeyHeader}}
-{{#t}}journeys.ecs.header{{/t}}
-{{/journeyHeader}}
+    {{$journeyHeader}}
+        {{#t}}journeys.ecs.header{{/t}}
+    {{/journeyHeader}}
 
-{{$title}}
-{{#t}}journeys.ecs.header{{/t}}
-{{/title}}
+    {{$title}}
+        {{#t}}journeys.ecs.header{{/t}}
+    {{/title}}
 
-{{$validationSummary}}
-{{> partials-validation-summary}}
-{{/validationSummary}}
+    {{$validationSummary}}
+        {{> partials-validation-summary}}
+    {{/validationSummary}}
 
-{{$propositionHeader}}
-{{> partials-navigation}}
-{{/propositionHeader}}
+    {{$propositionHeader}}
+        {{> partials-navigation}}
+    {{/propositionHeader}}
 
-{{$content}}
+    {{$content}}
 
-{{<partials-form}}
+        {{<partials-form}}
 
-{{$form}}
-<div> </div>
-<h1>{{#t}}pages.employee-details.label{{/t}} </h1>
+            {{$form}}
+                <h1>{{#t}}pages.employee-details.label{{/t}} </h1>
+                <h3>{{#t}}pages.employee-details.legend{{/t}} </h3>
+                {{#input-text}}employee-name-text{{/input-text}}
+                <br/>
 
-<h3>{{#t}}pages.employee-details.legend{{/t}} </h3>
+                <fieldset id="date-of-birth-group" class="{{#errors.date-of-birth}}validation-error{{/errors.date-of-birth}} form-group">
 
-{{#input-text}}employee-name-text{{/input-text}}
+                   <span class="form-label-bold">{{#t}}fields.date-of-birth.legend{{/t}}</span>
 
-<br/>
+                    {{#errors.date-of-birth}}
+                            <span id="date-of-birth-error" class="error-message">
+                              {{errors.date-of-birth.message}}
+                            </span>
+                    {{/errors.date-of-birth}}
 
-<fieldset id="date-of-birth-group" class="{{#errors.date-of-birth}}validation-error{{/errors.date-of-birth}} form-group">
+                    <div class="form-group form-date">
+                        <p id="date-hint" class="form-hint">
+                            {{#t}}fields.date-of-birth.hint{{/t}}
+                        </p>
+                        {{#input-date}}date-of-birth{{/input-date}}
+                    </div>
+                </fieldset>
 
-   <span class="form-label-bold">{{#t}}fields.date-of-birth.legend{{/t}}</span>
+                {{#input-text}}nationality{{/input-text}}
+                {{#input-text}}uk-address-house-number{{/input-text}}
+                {{#input-text}}uk-address-street{{/input-text}}
+                {{#input-text}}uk-address-town{{/input-text}}
+                {{#input-text}}uk-address-county{{/input-text}}
+                {{#input-text-code}}uk-address-postcode{{/input-text-code}}
+                {{#input-text-code}}job-title{{/input-text-code}}
+                {{#input-text-code}}hours-per-week{{/input-text-code}}
 
-    {{#errors.date-of-birth}}
-            <span id="date-of-birth-error" class="error-message">
-              {{errors.date-of-birth.message}}
-            </span>
-    {{/errors.date-of-birth}}
+                {{#input-submit}}next{{/input-submit}}
 
-    <div class="form-group form-date">
-        <p id="date-hint" class="form-hint">
-            {{#t}}fields.date-of-birth.hint{{/t}}
-        </p>
-        {{#input-date}}date-of-birth{{/input-date}}
-    </div>
-</fieldset>
+            {{/form}}
 
-{{#input-text}}nationality{{/input-text}}
+        {{/partials-form}}
 
-{{#input-text}}uk-address-house-number{{/input-text}}
-
-{{#input-text}}uk-address-street{{/input-text}}
-
-{{#input-text}}uk-address-town{{/input-text}}
-
-{{#input-text}}uk-address-county{{/input-text}}
-
-{{#input-text-code}}uk-address-postcode{{/input-text-code}}
-
-{{#input-text-code}}job-title{{/input-text-code}}
-
-{{#input-text-code}}hours-per-week{{/input-text-code}}
-
-{{#input-submit}}next{{/input-submit}}
-
-{{/form}}
-
-{{/partials-form}}
-
-{{/content}}
+    {{/content}}
 
 {{/layout}}
