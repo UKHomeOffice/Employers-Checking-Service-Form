@@ -52,22 +52,14 @@ if ($('#application-reference-number').length) {
 if ($('#which-countries').length) {
   $('#which-countries').click(function() {
 
-    if ($('#eea-countries').hasClass('hidden')){
-      $('#eea-countries').removeClass('hidden');
-    } else {
-      $('#eea-countries').addClass('hidden');
-    }
+    $('#eea-countries').toggleClass('hidden');
 
   });
 }
 if ($('#what-is-tupe').length) {
   $('#what-is-tupe').click(function() {
 
-    if ($('#tupe-description').hasClass('hidden')){
-      $('#tupe-description').removeClass('hidden');
-    } else {
-      $('#tupe-description').addClass('hidden');
-    }
+    $('#tupe-description').toggleClass('hidden');
 
   });
 }
@@ -79,8 +71,15 @@ if ($('#settlement-protection-group').length) {
                               settlementText +
                               "<a href='https://www.gov.uk/settlement-refugee-or-humanitarian-protection'>settlement protection?</a>"
                           "</span>";
-  $("#settlement-protection-group > legend").empty();
-  $("#settlement-protection-group > legend").append(settlementLink);
+
+  /* if theres an error */
+  if ($('#settlement-protection-error').length) {
+    $("#settlement-protection-group > legend > span").eq(1).remove();
+    $("#settlement-protection-group > legend").append(settlementLink);
+  } else {
+    $("#settlement-protection-group > legend").empty();
+    $("#settlement-protection-group > legend").append(settlementLink);
+  }
 }
 
 /* Show error on first page ECS */
