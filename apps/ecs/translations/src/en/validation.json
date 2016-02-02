@@ -6,40 +6,37 @@
     "required": "Please let us know whether we can contact you for more information"
   },
   "ongoing-application-id-number": {
-    "required": " This is a required field and must be completed."
-  },
-  "ongoing-application-id-number": {
-    "required": " This is a required field and must be completed."
+    "required": "Enter the reference number or Case ID of the on-going application"
   },
   "employee-name-text":{
-    "required": " Enter the full name"
+    "required": " Enter the employee's full name"
   },
   "date-of-birth": {
-    "required": "Enter your date of birth",
+    "required": "Enter the employee's date of birth",
     "numeric": "Date must only contain numbers",
     "future": "The date is in the future",
-    "format": "Enter your date of birth in the correct format"
+    "format": "Enter the date in the correct format"
   },
   "nationality":{
-    "required": "Enter your nationality"
+    "required": "Enter the employee's nationality"
   },
   "uk-address-house-number": {
-    "required": "Enter your house name or number"
+    "required": "Enter the employee's house name or number"
   },
   "uk-address-street": {
-    "required": "Enter your street"
+    "required": "Enter the employee's street"
   },
   "uk-address-town": {
-    "required": "Enter the Town or City"
+    "required": "Enter the employee's Town or City"
   },
   "uk-address-postcode": {
-    "required": "Enter the postcode"
+    "required": "Enter the employee's postcode"
   },
   "job-title": {
-    "required": "Enter the job title"
+    "required": "Enter the employee's job title"
   },
   "hours-per-week": {
-    "required": "Enter the hours per week"
+    "required": "Enter the employee's hours per week"
   },
   "eea-passport": {
     "required": "You must tell us whether the employee has documents that demonstrate a right to work"
@@ -53,6 +50,15 @@
     "future": "The date is in the future",
     "format": "Enter the date in the correct format"
   },
+  "tupe-transfer": {
+    "required": "Please specify if this person works for you due to a TUPE transfer"
+  },
+  "other-docs": {
+    "required": "Please specify whether this person has any of the following"
+  },
+  "original-document": {
+    "required": "Please specify if you have seen the original document"
+  },
   "tupe-transfer-date": {
     "required": "The TUPE date must be later than the date of recruitment.",
     "numeric": "Date must only contain numbers",
@@ -60,8 +66,11 @@
     "format": "Enter the date in the correct format",
     "inValidDate": "The TUPE Transfer date must be later than the employee's date of recruitment."
   },
+  "settlement-protection": {
+    "required": "Please specify if this person applied for, or qualifies for, settlement protection"
+  },
   "business-name":{
-    "required": "Enter the business name"
+    "required": "Enter the business's name"
   },
   "type-of-business":{
     "required": "Enter the type of business"
@@ -69,15 +78,27 @@
   "employer-contact-name":{
     "required": "Enter the employer's contact name"
   },
+  "employer-uk-address-house-number": {
+    "required": "Enter the business's address"
+  },
+  "employer-uk-address-town": {
+    "required": "Enter the town/city the business is located"
+  },
+  "employer-uk-address-postcode": {
+    "required": "Enter the business's postcode"
+  },
   "employer-contact-telephone":{
-    "required": "Enter the contact telephone"
+    "required": "Enter the employer's contact telephone"
+  },
+  "employer-job-title": {
+    "required": "Enter the employer's job title"
   },
   "employer-contact-email-address":{
-    "required": "Enter the contact email address",
-    "email": "Enter your email in the correct format for example, name@domain.com"
+    "required": "Enter the employer's contact email address",
+    "email": "Enter the email in the correct format for example, name@domain.com"
   },
   "employer-confirm-email-address":{
-    "required": "Enter the confirm contact email address",
+    "required": "Enter the employer's contact email address",
     "notMatched": "Please ensure the contact confirmation email address matches the contact email address."
   },
   "arc-serial-number":{
