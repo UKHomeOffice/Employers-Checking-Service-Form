@@ -66,24 +66,7 @@ Emailer.prototype.send = function send(email, callback) {
       to: '',
       subject: email.subject,
       text: Hogan.compile(caseworkerPlainTextTemplates[email.template]).render(templateData),
-      html: Hogan.compile(caseworkerHtmlTemplates[email.template]).render(templateData),
-      attachments: [
-        {
-          filename: 'govuk_logotype_email.png',
-          path: path.resolve(__dirname, './images/govuk_logotype_email.png'),
-          cid: 'govuk_logotype_email'
-        },
-        {
-          filename: 'ho_crest_27px.png',
-          path: path.resolve(__dirname, './images/ho_crest_27px.png'),
-          cid: 'ho_crest_27px'
-        },
-        {
-          filename: 'spacer.gif',
-          path: path.resolve(__dirname, './images/spacer.gif'),
-          cid: 'spacer_image'
-        }
-      ]
+      html: Hogan.compile(caseworkerHtmlTemplates[email.template]).render(templateData)
     }, sendCustomerEmail.bind(this));
   }.bind(this));
 };
