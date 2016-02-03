@@ -181,7 +181,7 @@
       Then I see the tupe_transfer question
       When I click yes_tupetransfer and then continue
       Then I see the tupe_transfer_date question
-      When I enter the tupe transfer date with year start_year2008
+      When I enter the tupetransfer date with year start_year2008
       And I click next
       Then I see the other_documents question
       When I click transfer_visa and then continue

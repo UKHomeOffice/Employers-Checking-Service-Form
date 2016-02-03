@@ -39,7 +39,7 @@
       Then I see the tupe_transfer question
       When I click yes_tupetransfer and then continue
       Then I see the tupe_transfer_date question
-      When I enter the tupe transfer date with year start_year2006
+      When I enter the tupetransfer date with year start_year2006
       And I click next
       Then I see the request_not_needed header
       And I click back
@@ -123,7 +123,7 @@
         Then I see the tupe_transfer question
         When I click yes_tupetransfer and then continue
         Then I see the tupe_transfer_date question
-        When I enter the tupe transfer date with year start_year2008
+        When I enter the tupetransfer date with year start_year2008
         And I click next
         Then I see the other_documents question
         And I click back
@@ -185,7 +185,7 @@
             Then I see the tupe_transfer question
             When I click yes_tupetransfer and then continue
             Then I see the tupe_transfer_date question
-            When I enter the tupe transfer date with year start_year2008
+            When I enter the tupetransfer date with year start_year2008
             And I click next
             Then I see the other_documents question
             When I click app_reg_card and then continue

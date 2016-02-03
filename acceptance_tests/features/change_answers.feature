@@ -90,7 +90,7 @@
       Then I see the tupe_transfer question
       When I click yes_tupetransfer and then continue
       Then I see the tupe_transfer_date question
-      When I enter the tupe transfer date with year start_year2008
+      When I enter the tupetransfer date with year start_year2008
       And I click next
       Then I see the other_documents question
       When I click no_time_limit and then continue
@@ -139,7 +139,8 @@
       When I enter the employer's details
       And I click next
       Then I see the summary header
-      Then I should not see the tupe headers in the summary
+      Then I should not see the tupe_transfer header in the summary
+      Then I should not see the tupe_transfer_date header in the summary
       Then I should see the headers and my information in the summary:
         | work_for_you        | yes                   |
         | when_did_they_start | start_date2008        |
@@ -175,7 +176,7 @@
       Then I see the tupe_transfer question
       When I click yes_tupetransfer and then continue
       Then I see the tupe_transfer_date question
-      When I enter the tupe transfer date with year start_year2008
+      When I enter the tupetransfer date with year start_year2008
       And I click next
       Then I see the other_documents question
       When I click no_time_limit and then continue
@@ -223,7 +224,9 @@
       When I enter the employer's details
       And I click next
       Then I see the summary header
-      Then I should not see when did they start or tupe headers in the summary
+      Then I should not see the when_did_they_start header in the summary
+      Then I should not see the tupe_transfer header in the summary
+      Then I should not see the tupe_transfer_date header in the summary
       Then I should see the headers and my information in the summary:
         | work_for_you        | no                    |
         | other_documents     | app_no_time_limit     |
@@ -298,7 +301,9 @@
       When I enter the employer's details
       And I click next
       Then I see the summary header
-      Then I should not see original-docs or arc headers in the summary
+      Then I should not see the arc_serial_numnber header in the summary
+      Then I should not see the ifb_number header in the summary
+      Then I should not see the original_document header in the summary
       Then I should see the headers and my information in the summary:
         | work_for_you          | no                    |
         | other_documents       | ongoing_app_or_appeal |
@@ -371,7 +376,7 @@
       When I enter the employer's details
       And I click next
       Then I see the summary header
-      Then I should not see original-docs header in the summary
+      Then I should not see the original_document header in the summary
       Then I should see the headers and my information in the summary:
         | work_for_you          | no                    |
         | other_documents       | transfer_visa_app     |
@@ -441,7 +446,7 @@
       When I enter the employer's details
       And I click next
       Then I see the summary header
-      Then I should not see settlement protection header in the summary
+      Then I should not see the settlement_protection header in the summary
       Then I should see the headers and my information in the summary:
         | work_for_you          | no                    |
         | other_documents       | brp_repacement        |
@@ -514,7 +519,7 @@
       When I enter the employer's details
       And I click next
       Then I see the summary header
-      Then I should not see case id header in the summary
+      Then I should not see the ongoing_app header in the summary
       Then I should see the headers and my information in the summary:
         | work_for_you        | no                    |
         | other_documents     | arc_app               |
@@ -586,7 +591,7 @@
       When I enter the employer's details
       And I click next
       Then I see the summary header
-      Then I should not see case id header in the summary
+      Then I should not see the ongoing_app header in the summary
       Then I should see the headers and my information in the summary:
         | work_for_you          | no                    |
         | other_documents       | none_above            |
@@ -661,7 +666,7 @@
       When I enter the employer's details
       And I click next
       Then I see the summary header
-      Then I should not see original-docs header in the summary
+      Then I should not see the original_document header in the summary
       Then I should see the headers and my information in the summary:
         | work_for_you          | no                    |
         | other_documents       | none_above            |
@@ -718,7 +723,8 @@
         | contact_email_header| contact_email         |
       When I click employer's email change button
       Then I see the employers_header header
-      Then I change the employer's email address
+      Then I change the employers_email_text to new_contact_email
+      Then I change the employers_confirm_email_text to new_contact_email
       And I click next
       Then I see the summary header
       Then I should see the headers and my information in the summary:
@@ -777,7 +783,7 @@
         | contact_email_header| contact_email         |
       When I click employee's hours per week change button
       Then I see the employee_header header
-      Then I change the employee's hours per week
+      Then I change the employee_hours_per_week to new_hours
       And I click next
       Then I see the summary header
       Then I should see the headers and my information in the summary:

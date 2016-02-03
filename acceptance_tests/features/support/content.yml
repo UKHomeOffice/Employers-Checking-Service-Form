@@ -33,7 +33,7 @@ street_name: 'uk-address-street'
 city_add: 'uk-address-town'
 postcode_add: 'uk-address-postcode'
 employee_job: 'job-title'
-hours_per_week: 'hours-per-week'
+employee_hours_per_week: 'hours-per-week'
 business_name_text: 'business-name'
 business_type_text: 'type-of-business'
 business_add_text: 'employer-uk-address-house-number'
@@ -48,11 +48,14 @@ confirm: 'declaration_confirmation'
 start_day_text: 'when-did-they-start-day'
 start_month_text: 'when-did-they-start-month'
 start_year_text: 'when-did-they-start-year'
+start_alpha: 'a'
+start_beta: 'b'
+start_charlie: 'c'
 yes_tupetransfer: 'tupe-transfer-Yes'
 no_tupetransfer: 'tupe-transfer-No'
-tupetransfer_date_day: 'tupe-transfer-date-day'
-tupetransfer_date_month: 'tupe-transfer-date-month'
-tupetransfer_date_year: 'tupe-transfer-date-year'
+tupetransfer_day_text: 'tupe-transfer-date-day'
+tupetransfer_month_text: 'tupe-transfer-date-month'
+tupetransfer_year_text: 'tupe-transfer-date-year'
 yes_protection: 'settlement-protection-Yes'
 no_protection: 'settlement-protection-No'
 yes_original_doc: 'original-document-Yes'
@@ -87,8 +90,12 @@ start_day: '10'
 start_month: '10'
 start_year2008: '2008'
 start_year2006: '2006'
+start_year_future: '2100'
+start_incorrect_format: '13'
+start_day_before: '1'
 arc_serial_num: '123456'
 ifb_ref_num: '654321'
+incorrect_email: 'test.gmail.com'
 
 #Summary Table
 no: 'No'
@@ -125,3 +132,43 @@ thankyou: 'Thank you for submitting information to the Home Office'
 request_not_needed: 'You do not need to request a Home Office right to work check'
 must_see_original_doc: 'You must have seen the original document'
 cannot_request_check: 'You cannot request a Home Office right to work check'
+
+#Error Messages
+eea_passport_error: 'You must tell us whether the employee has documents that demonstrate a right to work'
+work_for_you_error: 'Please specify if this person already works for you'
+other_docs_error: 'Please specify whether this person has any of the following'
+ongoing_app_id_error: 'Enter the reference number or Case ID of the on-going application'
+employee_full_name_error: "Enter the employee's full name"
+employee_nationality_error: "Enter the employee's nationality"
+employee_dob_error: "Enter the employee's date of birth"
+employee_address_1_error: "Enter the employee's house name or number"
+employee_address_2_error: "Enter the employee's street"
+employee_city_error: "Enter the employee's Town or City"
+employee_postcode_error: "Enter the employee's postcode"
+employee_job_title_error: "Enter the employee's job title"
+employee_hours_error: "Enter the employee's hours per week"
+business_name_error: "Enter the business's name"
+business_type_error: "Enter the type of business"
+business_Address_error: "Enter the business's address"
+business_city_error: "Enter the town/city the business is located"
+business_postcode_error: "Enter the business's postcode"
+employer_name_error: "Enter the employer's contact name"
+employer_job_error: "Enter the employer's job title"
+employer_number_error: "Enter the employer's contact telephone"
+employer_email_error: "Enter the employer's contact email address"
+employer_confirm_email_error: "Please confirm the employer's contact email address"
+data_protection_error: 'Please ensure you have agreed to the declaration before continuing.'
+when_did_they_start_error: 'Enter the date this person started working for you'
+future_error: 'The date is in the future'
+date_letters_error: 'Date must only contain numbers'
+date_incorrect_format_error: 'Enter the date in the correct format'
+tupe_transfer_date_error: 'Enter the date of the TUPE transfer'
+tupe_date_before_error: "The TUPE Transfer date must be later than the employee's date of recruitment."
+email_incorrect_format_error: 'Enter the email in the correct format for example, name@domain.com'
+email_not_matching_error: 'Please ensure the contact confirmation email address matches the contact email address.'
+
+
+
+
+
+
