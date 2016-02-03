@@ -60,7 +60,7 @@
     "required": "Please specify if you have seen the original document"
   },
   "tupe-transfer-date": {
-    "required": "The TUPE date must be later than the date of recruitment.",
+    "required": "Enter the date of the TUPE transfer.",
     "numeric": "Date must only contain numbers",
     "future": "The date is in the future",
     "format": "Enter the date in the correct format",
@@ -98,7 +98,7 @@
     "email": "Enter the email in the correct format for example, name@domain.com"
   },
   "employer-confirm-email-address":{
-    "required": "Enter the employer's contact email address",
+    "required": "Please confirm the employer's contact email address",
     "notMatched": "Please ensure the contact confirmation email address matches the contact email address."
   },
   "arc-serial-number":{
