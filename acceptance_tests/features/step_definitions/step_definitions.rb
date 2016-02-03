@@ -44,16 +44,10 @@ When(/^I enter (.*) into the (.*) field$/) do | text, field |
   fill_in CONTENT[field], :with => CONTENT[text]
 end
 
-When(/^I enter the start date with year (.*)$/) do | year |
-  step 'I enter start_day into the start_day_text field'
-  step 'I enter start_month into the start_month_text field'
-  step "I enter #{year} into the start_year_text field"
-end
-
-When(/^I enter the tupe transfer date with year (.*)$/) do | year |
-  step 'I enter start_day into the tupetransfer_date_day field'
-  step 'I enter start_month into the tupetransfer_date_month field'
-  step "I enter #{year} into the tupetransfer_date_year field"
+When(/^I enter the (.*) date with year (.*)$/) do | field, year |
+  step "I enter start_day into the #{field}_day_text field"
+  step "I enter start_month into the #{field}_month_text field"
+  step "I enter #{year} into the #{field}_year_text field"
 end
 
 When(/^I enter the date of birth$/) do
@@ -71,7 +65,7 @@ When(/^I enter the employee's details$/) do
   step 'I enter city into the city_add field'
   step 'I enter postcode into the postcode_add field'
   step 'I enter jobtitle into the employee_job field'
-  step 'I enter hours into the hours_per_week field'
+  step 'I enter hours into the employee_hours_per_week field'
 end
 
 When(/^I enter the employer's details$/) do
@@ -99,33 +93,8 @@ Then(/^I should see the headers and my information in the summary:$/) do | table
   end
 end
 
-Then(/^I should not see the tupe headers in the summary$/) do
-    step 'I expect to not see tupe_transfer'
-    step 'I expect to not see tupe_transfer_date'
-end
-
-Then(/^I should not see when did they start or tupe headers in the summary$/) do
-  step 'I expect to not see when_did_they_start'
-  step 'I expect to not see tupe_transfer'
-  step 'I expect to not see tupe_transfer_date'
-end
-
-Then(/^I should not see original-docs or arc headers in the summary$/) do
-  step 'I expect to not see arc_serial_numnber'
-  step 'I expect to not see ifb_number'
-  step 'I expect to not see original_document'
-end
-
-Then(/^I should not see original-docs header in the summary$/) do
-  step 'I expect to not see original_document'
-end
-
-Then(/^I should not see settlement protection header in the summary$/) do
-  step 'I expect to not see settlement_protection'
-end
-
-Then(/^I should not see case id header in the summary$/) do
-  step 'I expect to not see ongoing_app'
+Then(/^I should not see the (.*) header in the summary$/) do | header |
+  step "I expect to not see #{header}"
 end
 
 Then(/^I expect to not see (.*)$/) do | content |
@@ -152,15 +121,53 @@ When(/^I click employee's hours per week change button$/) do
   find(:xpath, "//*[@id='employee-details']/tbody/tr[6]/td[3]/a").click
 end
 
-Then(/^I change the employer's email address$/) do
-  step 'I enter new_contact_email into the employers_email_text field'
-  step 'I enter new_contact_email into the employers_confirm_email_text field'
+Then(/^I change the (.*) to (.*)$/) do | field, newanswer |
+  step "I enter #{newanswer} into the #{field} field"
 end
 
-Then(/^I change the employee's hours per week$/) do
-  step 'I enter new_hours into the hours_per_week field'
+Then(/^I see the (.*) error message$/) do | message |
+  expect(page).to have_content CONTENT["#{message}"]
 end
 
-Given /^I wait for (\d+) seconds?$/ do |n|
-  sleep(n.to_i)
+Then(/^I see the employee details error messages$/) do
+  step 'I see the employee_full_name_error error message'
+  step 'I see the employee_nationality_error error message'
+  step 'I see the employee_dob_error error message'
+  step 'I see the employee_address_1_error error message'
+  step 'I see the employee_address_2_error error message'
+  step 'I see the employee_city_error error message'
+  step 'I see the employee_postcode_error error message'
+  step 'I see the employee_job_title_error error message'
+  step 'I see the employee_hours_error error message'
+end
+
+Then(/^I see the employer details error messages$/) do
+  step 'I see the business_name_error error message'
+  step 'I see the business_type_error error message'
+  step 'I see the business_Address_error error message'
+  step 'I see the business_city_error error message'
+  step 'I see the business_postcode_error error message'
+  step 'I see the employer_name_error error message'
+  step 'I see the employer_job_error error message'
+  step 'I see the employer_number_error error message'
+  step 'I see the employer_email_error error message'
+  step 'I see the employer_confirm_email_error error message'
+end
+
+Then(/^I enter incorrect TUPE date$/) do
+  step 'I enter start_day_before into the tupetransfer_day_text field'
+  step 'I enter start_month into the tupetransfer_month_text field'
+  step 'I enter start_year2006 into the tupetransfer_year_text field'
+end
+
+Then(/^I enter incorrect format (.*) date$/) do | field |
+  step "I enter start_day into the #{field}_day_text field"
+  step "I enter start_incorrect_format into the #{field}_month_text field"
+  step "I enter start_year2008 into the #{field}_year_text field"
+end
+
+Then(/^I enter letters into the (.*) date fields$/) do | field |
+  step "I enter start_alpha into the #{field}_day_text field"
+  step "I enter start_beta into the #{field}_month_text field"
+  step "I enter start_charlie into the #{field}_year_text field"
 end
