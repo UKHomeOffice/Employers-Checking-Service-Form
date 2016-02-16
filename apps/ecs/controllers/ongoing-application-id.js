@@ -31,19 +31,5 @@ OnGoingAppController.prototype.saveValues = function saveValues(req, res, callba
     BaseController.prototype.saveValues.apply(this, arguments);
 }
 
-OnGoingAppController.prototype.getValues = function getValues(req, res, callback) {
-    res.locals.backLink = getBackLink(req);
-    BaseController.prototype.getValues.call(this, req, res, callback);
-}
-
-function getBackLink(req) {
-    var originalDocs = req.sessionModel.get('original-document');
-
-    if (originalDocs !== undefined) {
-        return 'original-document';
-    } else {
-        return 'other-documents';
-    }
-}
 
 module.exports = OnGoingAppController;
