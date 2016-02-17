@@ -1088,7 +1088,8 @@ strong {
     margin: 0; }
     .validation-summary ul li {
       margin: 0;
-      padding: 3px 0; }
+      padding: 3px 0;
+      list-style-type: none;}
   .validation-summary a {
     font-family: "nta", Arial, sans-serif;
     font-size: 19px;
